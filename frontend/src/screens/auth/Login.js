@@ -1,10 +1,15 @@
 import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const Login = () => {
+import logo from '../../../assets/images/logo.png';
+
+const Login = ({ navigation }) => {
     return (
-        <View>
-            <Text>Login</Text>
-        </View>
+        <SafeAreaView>
+            <View>
+                <Text>Login</Text>
+            </View>
+        </SafeAreaView>
     )
 }
 

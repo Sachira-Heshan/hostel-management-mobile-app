@@ -1,10 +1,13 @@
 import { View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
-const SignUp = () => {
+const SignUp = ({ navigation }) => {
     return (
-        <View>
-            <Text>SignUp</Text>
-        </View>
+        <SafeAreaView>
+            <View>
+                <Text>SignUp</Text>
+            </View>
+        </SafeAreaView>
     )
 }
 
