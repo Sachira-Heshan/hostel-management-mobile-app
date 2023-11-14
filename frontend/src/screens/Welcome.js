@@ -1,11 +1,12 @@
 import { View, Text, StyleSheet, Image } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button } from 'react-native-paper';
+import { useTheme, Button } from 'react-native-paper';
 
 import welcomeImage from '../../assets/images/welcome.png';
-import { textLightGray, textDarkGray, primaryBlue } from '../constants/Colors';
+import { textLightGray, textDarkGray, primaryBlue, white } from '../constants/Colors';
 
 const Welcome = ({ navigation }) => {
+    // const theme = useTheme()
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.contentContainer}>
