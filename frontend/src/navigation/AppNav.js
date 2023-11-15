@@ -5,8 +5,8 @@ import AppStack from './AppStack';
 import AuthStack from './AuthStack';
 
 const AppNav = () => {
-    const userToken = null
-    // const userToken = 'not-null'
+    // const userToken = null
+    const userToken = 'not-null'
 
     return (
         <NavigationContainer>

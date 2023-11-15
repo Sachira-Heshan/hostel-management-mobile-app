@@ -1,15 +1,15 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { black, lightGray, primaryBlue, white } from '../../../constants/Colors';
+import { black, lightGray, primaryBlue, white } from '../../../../constants/Colors';
 import { Button } from 'react-native-paper';
 
-const Complains = ({ navigation }) => {
+const RoomDetails = ({ navigation }) => {
     return (
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ backgroundColor: white, minHeight: '100%' }} showsVerticalScrollIndicator={false} >
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
-                    <Text>Hello Complains</Text>
+                    <Text>Hello RoomDetails</Text>
                 </View>
             </View>
         </ScrollView>
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Complains
+export default RoomDetails
