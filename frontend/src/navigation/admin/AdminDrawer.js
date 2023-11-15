@@ -9,6 +9,9 @@ import Announcements from '../../screens/app/admin/Announcements';
 import Complains from '../../screens/app/admin/Complains';
 import LatePasses from '../../screens/app/admin/LatePasses';
 import Settings from '../../screens/app/admin/Settings';
+import PendingRoomRequests from '../../screens/app/admin/rooms/PendingRoomRequests';
+import AcceptedRoomRequests from '../../screens/app/admin/rooms/AcceptedRequests';
+import RoomDetails from '../../screens/app/admin/rooms/RoomDetails';
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -39,6 +42,9 @@ export const AdminRooms = () => {
             }}
         >
             <RoomsStack.Screen name='AdminRooms' component={Rooms} />
+            <RoomsStack.Screen name='AdminPendingRoomRequests' component={PendingRoomRequests} />
+            <RoomsStack.Screen name='AdminAcceptedRoomRequests' component={AcceptedRoomRequests} />
+            <RoomsStack.Screen name='AdminRoomDetails' component={RoomDetails} />
         </RoomsStack.Navigator>
     )
 }
