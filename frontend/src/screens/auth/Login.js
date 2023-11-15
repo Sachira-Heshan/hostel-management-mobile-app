@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         backgroundColor: white
     },
     contentContainer: {
-        width: '80%',
+        width: '85%',
         alignItems: 'center',
         justifyContent: 'center',
     },
