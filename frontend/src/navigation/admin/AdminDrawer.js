@@ -19,6 +19,7 @@ import ChangeProfileDetails from '../../screens/app/admin/settings/ChangeProfile
 import ChangePassword from '../../screens/app/admin/settings/ChangePassword';
 import AddAnnouncement from '../../screens/app/admin/announcements/AddAnnouncement';
 import ViewAnnouncement from '../../screens/app/admin/announcements/ViewAnnouncement';
+import Notifications from '../../screens/app/admin/Notifications';
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -26,6 +27,7 @@ const AnnouncementStack = createStackNavigator();
 const ComplainsStack = createStackNavigator();
 const LatePassesStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
+const NotificationsStack = createStackNavigator();
 
 export const AdminDashboard = () => {
     return (
@@ -40,6 +42,7 @@ export const AdminDashboard = () => {
             <DashboardStack.Screen name='AdminAnnouncementsDashboard' component={AdminAnnouncements} />
             <DashboardStack.Screen name='AdminComplainsDashboard' component={AdminComplains} />
             <DashboardStack.Screen name='AdminLatePassesDashboard' component={AdminLatePasses} />
+            <DashboardStack.Screen name='AdminNotifications' component={AdminNotifications} />
         </DashboardStack.Navigator>
     )
 }
@@ -119,6 +122,18 @@ export const AdminSettings = () => {
     )
 }
 
+export const AdminNotifications = () => {
+    return (
+        <NotificationsStack.Navigator
+            initialRouteName='AdminNotifications'
+            screenOptions={{
+                headerShown: false
+            }}
+        >
+            <NotificationsStack.Screen name='AdminNotifications' component={Notifications} />
+        </NotificationsStack.Navigator>
+    )
+}
 
 // const AppStack = () => {
 //     return (
