@@ -10,6 +10,7 @@ const LatePasses = ({ navigation }) => {
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
                     <Text>Hello LatePasses</Text>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminViewLatePass')} style={{ width: '100%', margin: 15, padding: 10 }}>View Late Pass</Button>
                 </View>
             </View>
         </ScrollView>

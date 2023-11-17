@@ -10,6 +10,8 @@ const Settings = ({ navigation }) => {
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
                     <Text>Hello Settings</Text>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminChangeProfileDetails')} style={{ width: '100%', margin: 15, padding: 10 }}>Change Profile Details</Button>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminChangePassword')} style={{ width: '100%', margin: 15, padding: 10 }}>Change Password</Button>
                 </View>
             </View>
         </ScrollView>

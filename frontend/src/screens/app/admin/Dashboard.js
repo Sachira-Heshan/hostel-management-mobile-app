@@ -110,6 +110,12 @@ const Dashboard = ({ navigation }) => {
                             </View>
                         </View>
                     </View>
+                    <View style={styles.quickButtons}>
+                        <Button mode='contained' onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })} style={{ width: '100%', margin: 15, padding: 10 }}>Room Management</Button>
+                        <Button mode='contained' onPress={() => navigation.navigate('AdminComplainsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Complains</Button>
+                        <Button mode='contained' onPress={() => navigation.navigate('AdminAnnouncementsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Announcements</Button>
+                        <Button mode='contained' onPress={() => navigation.navigate('AdminLatePassesDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Late Passes</Button>
+                    </View>
                 </View>
             </View>
         </ScrollView>
@@ -149,7 +155,8 @@ const styles = StyleSheet.create({
     },
     progressIndicator: {
         marginHorizontal: 10
-    }
+    },
+    quickButtons: {}
 })
 
 export default Dashboard

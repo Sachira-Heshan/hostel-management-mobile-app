@@ -13,6 +13,7 @@ const Rooms = ({ navigation }) => {
                     <Button mode='contained' onPress={() => navigation.navigate('AdminPendingRoomRequests')} style={{ width: '100%', margin: 15, padding: 10 }}>Pending</Button>
                     <Button mode='contained' onPress={() => navigation.navigate('AdminAcceptedRoomRequests')} style={{ width: '100%', margin: 15, padding: 10 }}>Accepted</Button>
                     <Button mode='contained' onPress={() => navigation.navigate('AdminRoomDetails')} style={{ width: '100%', margin: 15, padding: 10 }}>Room Details</Button>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminVacateRoom')} style={{ width: '100%', margin: 15, padding: 10 }}>Vacate Room</Button>
                 </View>
             </View>
         </ScrollView>

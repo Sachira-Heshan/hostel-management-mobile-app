@@ -7,11 +7,18 @@ import Dashboard from '../../screens/app/admin/Dashboard';
 import Rooms from '../../screens/app/admin/Rooms';
 import Announcements from '../../screens/app/admin/Announcements';
 import Complains from '../../screens/app/admin/Complains';
+import ViewComplain from '../../screens/app/admin/complains/ViewComplain';
 import LatePasses from '../../screens/app/admin/LatePasses';
+import ViewLatePass from '../../screens/app/admin/late_passes/ViewLatePass';
 import Settings from '../../screens/app/admin/Settings';
 import PendingRoomRequests from '../../screens/app/admin/rooms/PendingRoomRequests';
 import AcceptedRoomRequests from '../../screens/app/admin/rooms/AcceptedRequests';
 import RoomDetails from '../../screens/app/admin/rooms/RoomDetails';
+import VacateRoom from '../../screens/app/admin/rooms/VacateRoom';
+import ChangeProfileDetails from '../../screens/app/admin/settings/ChangeProfileDetails';
+import ChangePassword from '../../screens/app/admin/settings/ChangePassword';
+import AddAnnouncement from '../../screens/app/admin/announcements/AddAnnouncement';
+import ViewAnnouncement from '../../screens/app/admin/announcements/ViewAnnouncement';
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -29,6 +36,10 @@ export const AdminDashboard = () => {
             }}
         >
             <DashboardStack.Screen name='AdminHome' component={Dashboard} />
+            <DashboardStack.Screen name='AdminRoomsDashboard' component={AdminRooms} />
+            <DashboardStack.Screen name='AdminAnnouncementsDashboard' component={AdminAnnouncements} />
+            <DashboardStack.Screen name='AdminComplainsDashboard' component={AdminComplains} />
+            <DashboardStack.Screen name='AdminLatePassesDashboard' component={AdminLatePasses} />
         </DashboardStack.Navigator>
     )
 }
@@ -45,6 +56,7 @@ export const AdminRooms = () => {
             <RoomsStack.Screen name='AdminPendingRoomRequests' component={PendingRoomRequests} />
             <RoomsStack.Screen name='AdminAcceptedRoomRequests' component={AcceptedRoomRequests} />
             <RoomsStack.Screen name='AdminRoomDetails' component={RoomDetails} />
+            <RoomsStack.Screen name='AdminVacateRoom' component={VacateRoom} />
         </RoomsStack.Navigator>
     )
 }
@@ -58,6 +70,8 @@ export const AdminAnnouncements = () => {
             }}
         >
             <AnnouncementStack.Screen name='AdminAnnouncements' component={Announcements} />
+            <AnnouncementStack.Screen name='AdminAddAnnouncement' component={AddAnnouncement} />
+            <AnnouncementStack.Screen name='AdminViewAnnouncement' component={ViewAnnouncement} />
         </AnnouncementStack.Navigator>
     )
 }
@@ -71,6 +85,7 @@ export const AdminComplains = () => {
             }}
         >
             <ComplainsStack.Screen name='AdminComplains' component={Complains} />
+            <ComplainsStack.Screen name='AdminViewComplain' component={ViewComplain} />
         </ComplainsStack.Navigator>
     )
 }
@@ -84,6 +99,7 @@ export const AdminLatePasses = () => {
             }}
         >
             <LatePassesStack.Screen name='AdminLatePasses' component={LatePasses} />
+            <LatePassesStack.Screen name='AdminViewLatePass' component={ViewLatePass} />
         </LatePassesStack.Navigator>
     )
 }
@@ -97,6 +113,8 @@ export const AdminSettings = () => {
             }}
         >
             <SettingsStack.Screen name='AdminSettings' component={Settings} />
+            <SettingsStack.Screen name='AdminChangeProfileDetails' component={ChangeProfileDetails} />
+            <SettingsStack.Screen name='AdminChangePassword' component={ChangePassword} />
         </SettingsStack.Navigator>
     )
 }
