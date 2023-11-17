@@ -10,6 +10,8 @@ const Announcements = ({ navigation }) => {
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
                     <Text>Hello Announcements</Text>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminAddAnnouncement')} style={{ width: '100%', margin: 15, padding: 10 }}>Add Announcement</Button>
+                    <Button mode='contained' onPress={() => navigation.navigate('AdminViewAnnouncement')} style={{ width: '100%', margin: 15, padding: 10 }}>View Announcement</Button>
                 </View>
             </View>
         </ScrollView>
