@@ -1,9 +1,9 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { black, lightGray, primaryBlue, textDarkGray, white } from '../../../constants/Colors';
 import { Button, TouchableRipple } from 'react-native-paper';
-import CircularProgress from 'react-native-circular-progress-indicator'
+import CircularProgress from 'react-native-circular-progress-indicator';
 
 const Dashboard = ({ navigation }) => {
     return (
@@ -123,22 +123,62 @@ const Dashboard = ({ navigation }) => {
                         </View>
                     </View>
                     <View style={styles.quickButtons}>
-                        {/* <Button
-                            mode='contained'
-                            onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })}
-                            style={{ width: '100%', margin: 15, padding: 10 }}
-                        >
-                            Room Management
-                        </Button> */}
+
                         <TouchableRipple
                             onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })}
                             style={styles.dashboardCard}
                         >
-                            <Text>Roomsssss</Text>
+                            <View style={{alignItems: 'center', paddingHorizontal: 15, paddingVertical: 20}}>
+                                <Image
+                                    source={require('../../../../assets/images/room_management.png')}
+                                    style={styles.cardImg}
+                                />
+                                <Text style={styles.cardText}>Room Management</Text>
+                            </View>
                         </TouchableRipple>
-                        {/* <Button mode='contained' onPress={() => navigation.navigate('AdminComplainsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Complains</Button>
-                        <Button mode='contained' onPress={() => navigation.navigate('AdminAnnouncementsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Announcements</Button>
-                        <Button mode='contained' onPress={() => navigation.navigate('AdminLatePassesDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Late Passes</Button> */}
+
+                        <TouchableRipple
+                            onPress={() => navigation.navigate('AdminAnnouncementsDashboard')}
+                            style={styles.dashboardCard}
+                        >
+                            <View style={{alignItems: 'center', paddingHorizontal: 15, paddingVertical: 20}}>
+                                <Image
+                                    source={require('../../../../assets/images/announcements.png')}
+                                    style={styles.cardImg}
+                                />
+                                <Text style={styles.cardText}>Announcements</Text>
+                            </View>
+                        </TouchableRipple>
+
+                    </View>
+                    <View style={styles.quickButtons}>
+
+                        <TouchableRipple
+                            onPress={() => navigation.navigate('AdminComplainsDashboard')}
+                            style={styles.dashboardCard}
+                        >
+                            <View style={{alignItems: 'center', paddingHorizontal: 15, paddingVertical: 20}}>
+                                <Image
+                                    source={require('../../../../assets/images/complains.png')}
+                                    style={styles.cardImg}
+                                />
+                                <Text style={styles.cardText}>Complains</Text>
+                            </View>
+                        </TouchableRipple>
+
+                        <TouchableRipple
+                            onPress={() => navigation.navigate('AdminLatePassesDashboard')}
+                            style={styles.dashboardCard}
+                        >
+                            <View style={{alignItems: 'center', paddingHorizontal: 15, paddingVertical: 20}}>
+                                <Image
+                                    source={require('../../../../assets/images/late_passes.png')}
+                                    style={styles.cardImg}
+                                />
+                                <Text style={styles.cardText}>Late Passes</Text>
+                            </View>
+                        </TouchableRipple>
+
                     </View>
                 </View>
             </View>
@@ -182,16 +222,26 @@ const styles = StyleSheet.create({
     progressIndicator: {
         marginHorizontal: 10
     },
-    dashboardCard: {
-        height: 50,
-        width: '50%',
-        backgroundColor: lightGray,
-    },
     quickButtons: {
         width: '100%',
-        marginVertical: 25,
-        backgroundColor: textDarkGray,
+        marginTop: 25,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
     },
+    dashboardCard: {
+        width: '48%',
+        backgroundColor: white,
+        borderRadius: 16,
+        elevation: 5,
+    },
+    cardImg: {
+        width: 60,
+    },
+    cardText: {
+        fontFamily: 'Roboto Bold',
+        fontSize: 18,
+        marginTop: 5,
+    }
 })
 
 export default Dashboard
