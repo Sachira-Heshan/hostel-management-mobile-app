@@ -4,7 +4,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { createDrawerNavigator, DrawerItemList, DrawerContentScrollView } from '@react-navigation/drawer';
 import { AdminAnnouncements, AdminComplains, AdminDashboard, AdminLatePasses, AdminRooms, AdminSettings } from '../navigation/admin/AdminDrawer';
 import { IconButton, Icon, Button } from 'react-native-paper';
-import { black, lightGray, primaryBlue, seperatorColor, textDarkGray, textLightGray } from '../constants/Colors';
+import { black, lightGray, primaryBlue, seperatorColor, textDarkGray, textLightGray, white } from '../constants/Colors';
 
 const Drawer = createDrawerNavigator();
 
@@ -38,10 +38,17 @@ const AdminDrawer = () => {
             }
             screenOptions={{
                 headerTitleAlign: 'center',
+                headerTintColor: white,
+                headerStyle: {
+                    backgroundColor: primaryBlue,
+                    borderRadius: 8,
+                },
                 headerRight: () => {
                     return (
                         <IconButton
                             icon={'bell-ring-outline'}
+                            iconColor={white}
+                        // onPress={() => navigation.navigate('AdminNotifications')}
                         />
                     )
                 },

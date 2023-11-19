@@ -1,8 +1,8 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { black, lightGray, primaryBlue, white } from '../../../constants/Colors';
-import { Button } from 'react-native-paper';
+import { black, lightGray, primaryBlue, textDarkGray, white } from '../../../constants/Colors';
+import { Button, TouchableRipple } from 'react-native-paper';
 import CircularProgress from 'react-native-circular-progress-indicator'
 
 const Dashboard = ({ navigation }) => {
@@ -10,7 +10,7 @@ const Dashboard = ({ navigation }) => {
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ backgroundColor: white, minHeight: '100%' }} showsVerticalScrollIndicator={false} >
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
-                    <View style={styles.capacityCard}>
+                    <View style={[styles.capacityCard, { marginVertical: 10 }]}>
                         <Text style={styles.title}>Student Capacity</Text>
                         <View style={styles.indicatorContainer}>
                             <View style={{}}>
@@ -26,6 +26,8 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                             <View style={styles.progressIndicator}>
@@ -41,6 +43,8 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                             <View style={{}}>
@@ -56,6 +60,8 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                         </View>
@@ -76,6 +82,8 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                             <View style={styles.progressIndicator}>
@@ -91,6 +99,8 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                             <View style={{}}>
@@ -106,15 +116,29 @@ const Dashboard = ({ navigation }) => {
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
+                                    inActiveStrokeWidth={8}
+                                    activeStrokeWidth={8}
                                 />
                             </View>
                         </View>
                     </View>
                     <View style={styles.quickButtons}>
-                        <Button mode='contained' onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })} style={{ width: '100%', margin: 15, padding: 10 }}>Room Management</Button>
-                        <Button mode='contained' onPress={() => navigation.navigate('AdminComplainsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Complains</Button>
+                        {/* <Button
+                            mode='contained'
+                            onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })}
+                            style={{ width: '100%', margin: 15, padding: 10 }}
+                        >
+                            Room Management
+                        </Button> */}
+                        <TouchableRipple
+                            onPress={() => navigation.navigate('AdminRoomsDashboard', { screen: 'AdminPendingRoomRequests' })}
+                            style={styles.dashboardCard}
+                        >
+                            <Text>Roomsssss</Text>
+                        </TouchableRipple>
+                        {/* <Button mode='contained' onPress={() => navigation.navigate('AdminComplainsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Complains</Button>
                         <Button mode='contained' onPress={() => navigation.navigate('AdminAnnouncementsDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Announcements</Button>
-                        <Button mode='contained' onPress={() => navigation.navigate('AdminLatePassesDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Late Passes</Button>
+                        <Button mode='contained' onPress={() => navigation.navigate('AdminLatePassesDashboard')} style={{ width: '100%', margin: 15, padding: 10 }}>Late Passes</Button> */}
                     </View>
                 </View>
             </View>
@@ -141,22 +165,33 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: 6,
-        backgroundColor: lightGray
+        backgroundColor: white,
+        elevation: 4,
     },
     title: {
         width: '90%',
-        fontFamily: 'Roboto Regular',
-        fontSize: 16,
+        fontFamily: 'Roboto Bold',
+        fontSize: 18,
         marginVertical: 10,
     },
     indicatorContainer: {
         padding: 10,
+        marginBottom: 10,
         flexDirection: 'row'
     },
     progressIndicator: {
         marginHorizontal: 10
     },
-    quickButtons: {}
+    dashboardCard: {
+        height: 50,
+        width: '50%',
+        backgroundColor: lightGray,
+    },
+    quickButtons: {
+        width: '100%',
+        marginVertical: 25,
+        backgroundColor: textDarkGray,
+    },
 })
 
 export default Dashboard
