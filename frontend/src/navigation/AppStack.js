@@ -26,7 +26,7 @@ const AdminDrawer = () => {
                                     mode='text'
                                     buttonColor={lightGray}
                                     textColor={textDarkGray}
-                                    labelStyle={{ fontSize: 16 }}
+                                    labelStyle={{ fontFamily: 'fontMedium', fontSize: 16 }}
                                     style={{ borderRadius: 6 }}
                                 >
                                     Sign out
@@ -43,6 +43,9 @@ const AdminDrawer = () => {
                     backgroundColor: primaryBlue,
                     borderRadius: 8,
                 },
+                headerTitleStyle: {
+                    fontFamily: 'fontBold'
+                },
                 headerRight: () => {
                     return (
                         <IconButton
@@ -54,6 +57,7 @@ const AdminDrawer = () => {
                 },
                 drawerLabelStyle: {
                     marginLeft: -20,
+                    fontFamily: 'fontMedium'
                 },
                 drawerActiveTintColor: primaryBlue,
                 drawerInactiveTintColor: textDarkGray,

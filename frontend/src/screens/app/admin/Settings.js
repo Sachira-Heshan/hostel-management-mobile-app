@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { black, lightGray, primaryBlue, white } from '../../../constants/Colors';
+import { black, lightGray, primaryBlue, textLightGray, white } from '../../../constants/Colors';
 import { Button } from 'react-native-paper';
 
 const Settings = ({ navigation }) => {
@@ -9,6 +9,8 @@ const Settings = ({ navigation }) => {
         <ScrollView style={{ flex: 1 }} contentContainerStyle={{ backgroundColor: white, minHeight: '100%' }} showsVerticalScrollIndicator={false} >
             <View style={styles.container}>
                 <View style={styles.contentContainer}>
+                    <Text style={styles.title}>Account</Text>
+                    <View style={styles.line}></View>
                     <Text>Hello Settings</Text>
                     <Button mode='contained' onPress={() => navigation.navigate('AdminChangeProfileDetails')} style={{ width: '100%', margin: 15, padding: 10 }}>Change Profile Details</Button>
                     <Button mode='contained' onPress={() => navigation.navigate('AdminChangePassword')} style={{ width: '100%', margin: 15, padding: 10 }}>Change Password</Button>
@@ -33,9 +35,14 @@ const styles = StyleSheet.create({
     },
     title: {
         width: '90%',
-        fontFamily: 'Roboto Regular',
-        fontSize: 16,
+        fontFamily: 'fontBold',
+        fontSize: 18,
         marginVertical: 10,
+    },
+    line: {
+        backgroundColor: textLightGray,
+        height: 1,
+        width: '100%',
     },
 })
 
