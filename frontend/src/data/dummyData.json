@@ -1,0 +1,31 @@
+{
+   "complains": [
+      {
+         "title": "Tap is broken",
+         "description": "Block B second floor bathroom tap is broken",
+         "image": ""
+      },
+      {
+         "title": "Fan is broken",
+         "description": "Block B second floor room 5 fan is broken",
+         "image": ""
+      },
+      {
+         "title": "Bulb is missing",
+         "description": "Block A third floor room 8 one bulb is missing",
+         "image": ""
+      }
+   ],
+   "announcements": [
+      {
+         "title": "Meeting",
+         "description": "There is a meeting for Block B students at 6 pm",
+         "image": ""
+      },
+      {
+         "title": "Drinking water interrupt",
+         "description": "There are no drinking water today from 12 pm to 6 pm",
+         "image": ""
+      }
+   ]
+}
