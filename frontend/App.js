@@ -6,6 +6,8 @@ import 'react-native-gesture-handler';
 import { LightScheme } from './src/theme/lightScheme';
 import { DarkScheme } from './src/theme/darkScheme';
 
+import { fontBold, fontLight, fontMedium, fontRegular, fontThin } from './src/constants/Fonts';
+
 const App = () => {
   const colorScheme = useColorScheme();
 
@@ -13,7 +15,12 @@ const App = () => {
     'Roboto Bold': require('./assets/fonts/Roboto-Bold.ttf'),
     'Roboto Light': require('./assets/fonts/Roboto-Light.ttf'),
     'Roboto Medium': require('./assets/fonts/Roboto-Medium.ttf'),
-    'Roboto Regular': require('./assets/fonts/Roboto-Regular.ttf')
+    'Roboto Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'fontBold': fontBold,
+    'fontRegular': fontRegular,
+    'fontMedium': fontMedium,
+    'fontLight': fontLight,
+    'fontThin': fontThin,
   })
 
   if (!fontsLoaded) {

@@ -22,7 +22,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={64}
                                     title='Block A'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -39,7 +39,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={400}
                                     title='Block B'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -56,7 +56,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={400}
                                     title='Block C'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -78,7 +78,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={32}
                                     title='Block A'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -95,7 +95,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={100}
                                     title='Block B'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -112,7 +112,7 @@ const Dashboard = ({ navigation }) => {
                                     maxValue={100}
                                     title='Block C'
                                     titleColor={black}
-                                    titleStyle={{ fontWeight: 'bold' }}
+                                    titleStyle={{ fontFamily: 'fontBold' }}
                                     inActiveStrokeColor={primaryBlue}
                                     inActiveStrokeOpacity={0.2}
                                     activeStrokeColor={primaryBlue}
@@ -210,7 +210,7 @@ const styles = StyleSheet.create({
     },
     title: {
         width: '90%',
-        fontFamily: 'Roboto Bold',
+        fontFamily: 'fontBold',
         fontSize: 18,
         marginVertical: 10,
     },
@@ -238,8 +238,8 @@ const styles = StyleSheet.create({
         width: 60,
     },
     cardText: {
-        fontFamily: 'Roboto Bold',
-        fontSize: 18,
+        fontFamily: 'fontBold',
+        fontSize: 17,
         marginTop: 5,
     }
 })
