@@ -27,5 +27,17 @@
          "description": "There are no drinking water today from 12 pm to 6 pm",
          "image": ""
       }
+   ],
+   "users": [
+      {
+         "fullname": "Sachira Heshan",
+         "email": "2019e055@eng.jfn.ac.lk",
+         "password": "123"
+      },
+      {
+         "fullname": "Anuka Mithara",
+         "email": "2019e054@eng.jfn.ac.lk",
+         "password": "12345"
+      }
    ]
 }
