@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Formik } from "formik";
@@ -9,7 +9,7 @@ import {
    primaryBlue,
    white,
 } from "../../../../constants/Colors";
-import { Button } from "react-native-paper";
+import { Button, Avatar } from "react-native-paper";
 
 const ChangeProfileDetails = ({ navigation }) => {
    const handleProfileEdit = () => {
@@ -33,11 +33,49 @@ const ChangeProfileDetails = ({ navigation }) => {
       >
          <View style={styles.container}>
             <View style={styles.contentContainer}>
-               <View style={styles.profileTop}>
+               <ImageBackground
+                  style={styles.profileTop}
+                  source={require("../../../../../assets/images/profile_cover.png")}
+                  resizeMode="cover"
+                  borderRadius={8}
+               >
                   <View style={styles.profileDataContainer}>
-                     <View style={styles.profilePictureContainer}></View>
+                     <View style={styles.profilePictureContainer}>
+                        <Avatar.Image
+                           size={75}
+                           source={require("../../../../../assets/images/profile_pic.png")}
+                        />
+                        <Avatar.Icon
+                           size={24}
+                           icon={"camera"}
+                           color={white}
+                           style={{
+                              backgroundColor: "rgba(0, 0, 0, 0.3)",
+                              marginLeft: "auto",
+                              marginTop: -20,
+                           }}
+                        />
+                        <Text
+                           style={{
+                              fontFamily: "fontBold",
+                              textAlign: "center",
+                              marginTop: 5,
+                           }}
+                        >
+                           Name
+                        </Text>
+                        <Text
+                           style={{
+                              fontFamily: "fontRegular",
+                              textAlign: "center",
+                              marginTop: -5,
+                           }}
+                        >
+                           enumber
+                        </Text>
+                     </View>
                   </View>
-               </View>
+               </ImageBackground>
                <View style={styles.profileDetailsContainer}>
                   <Formik
                      initialValues={{
@@ -99,12 +137,16 @@ const styles = StyleSheet.create({
    },
    profileTop: {
       width: "100%",
-      height: 150,
+      height: 180,
       marginVertical: 15,
       borderRadius: 8,
-      backgroundColor: lightGray,
    },
-   profileDataContainer: {},
+   profileDataContainer: {
+      width: "100%",
+      height: "100%",
+      alignItems: "center",
+      justifyContent: "center",
+   },
    profilePictureContainer: {},
    profileDetailsContainer: {
       width: "100%",
