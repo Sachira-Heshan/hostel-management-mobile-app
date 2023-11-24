@@ -30,14 +30,36 @@
    ],
    "users": [
       {
-         "fullname": "Sachira Heshan",
+         "profile_picture": "",
+         "full_name": "Sachira Heshan",
          "email": "2019e055@eng.jfn.ac.lk",
-         "password": "123"
+         "password": "123",
+         "batch": "E19",
+         "faculty": "Faculty of Engineering"
       },
       {
-         "fullname": "Anuka Mithara",
+         "profile_picture": "",
+         "full_name": "Anuka Mithara",
          "email": "2019e054@eng.jfn.ac.lk",
-         "password": "12345"
+         "password": "12345",
+         "batch": "A18",
+         "faculty": "Faculty of Agriculture"
+      },
+      {
+         "profile_picture": "",
+         "full_name": "Yasiru Kawsala",
+         "email": "2019e060@eng.jfn.ac.lk",
+         "password": "12345",
+         "batch": "ET18",
+         "faculty": "Faculty of Technology"
+      },
+      {
+         "profile_picture": "",
+         "full_name": "Chamod Lakshan",
+         "email": "2019e059@eng.jfn.ac.lk",
+         "password": "12345678",
+         "batch": "E19",
+         "faculty": "Faculty of Engineering"
       }
    ],
    "late_passes": [
@@ -58,6 +80,26 @@
          "departure_time": "6.00 PM",
          "arrival_date": "18 Nov 2023",
          "arrival_time": "6.00 AM"
+      }
+   ],
+   "pending_room_requests": [
+      {
+         "id": "450343432433",
+         "name": "Anuka Mithara",
+         "batch": "A18",
+         "faculty": "Faculty of Agriculture"
+      },
+      {
+         "id": "435034334952433",
+         "name": "Yasiru Kawsala",
+         "batch": "A18",
+         "faculty": "Faculty of Agriculture"
+      },
+      {
+         "id": "989034334952433",
+         "name": "Chamod Lakshan",
+         "batch": "E19",
+         "faculty": "Faculty of Engineering"
       }
    ]
 }
