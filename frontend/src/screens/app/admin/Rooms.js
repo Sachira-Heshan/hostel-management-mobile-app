@@ -87,6 +87,31 @@ const Rooms = ({ navigation }) => {
 
                   <TouchableRipple
                      onPress={() =>
+                        navigation.navigate("AdminPendingRoomChecklist")
+                     }
+                     style={styles.roomManagementCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/accepted_requests.png")}
+                           style={styles.cardImg}
+                        />
+                        <Text style={styles.cardText}>
+                           Pending Room Checklist
+                        </Text>
+                     </View>
+                  </TouchableRipple>
+               </View>
+
+               <View style={styles.quickButtons}>
+                  <TouchableRipple
+                     onPress={() =>
                         navigation.navigate("AdminAcceptedRoomRequests")
                      }
                      style={styles.roomManagementCard}
@@ -103,6 +128,25 @@ const Rooms = ({ navigation }) => {
                            style={styles.cardImg}
                         />
                         <Text style={styles.cardText}>Accepted Requests</Text>
+                     </View>
+                  </TouchableRipple>
+
+                  <TouchableRipple
+                     onPress={() => navigation.navigate("AdminVacateRoom")}
+                     style={styles.roomManagementCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/vacate_room.png")}
+                           style={styles.cardImg}
+                        />
+                        <Text style={styles.cardText}>Vacate Room</Text>
                      </View>
                   </TouchableRipple>
                </View>
@@ -124,25 +168,6 @@ const Rooms = ({ navigation }) => {
                            style={styles.cardImg}
                         />
                         <Text style={styles.cardText}>View Room Details</Text>
-                     </View>
-                  </TouchableRipple>
-
-                  <TouchableRipple
-                     onPress={() => navigation.navigate("AdminVacateRoom")}
-                     style={styles.roomManagementCard}
-                  >
-                     <View
-                        style={{
-                           alignItems: "center",
-                           paddingHorizontal: 15,
-                           paddingVertical: 20,
-                        }}
-                     >
-                        <Image
-                           source={require("../../../../assets/images/vacate_room.png")}
-                           style={styles.cardImg}
-                        />
-                        <Text style={styles.cardText}>Vacate Room</Text>
                      </View>
                   </TouchableRipple>
                </View>
