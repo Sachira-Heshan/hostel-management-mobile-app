@@ -57,7 +57,7 @@ const Rooms = ({ navigation }) => {
                            marginTop: -5,
                         }}
                      >
-                        {data.users[1].fullname}
+                        {data.users[1].full_name}
                      </Text>
                   </View>
                </View>
