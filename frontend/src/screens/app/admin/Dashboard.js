@@ -1,4 +1,5 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { useState, useCallback } from "react";
+import { View, Text, Image, RefreshControl, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -12,11 +13,23 @@ import { Button, TouchableRipple } from "react-native-paper";
 import CircularProgress from "react-native-circular-progress-indicator";
 
 const Dashboard = ({ navigation }) => {
+   const [refreshing, setRefreshing] = useState(false);
+
+   const onRefresh = useCallback(() => {
+      setRefreshing(true);
+      setTimeout(() => {
+         setRefreshing(false);
+      }, 1500);
+   });
+
    return (
       <ScrollView
          style={{ flex: 1 }}
          contentContainerStyle={{ backgroundColor: white, minHeight: "100%" }}
          showsVerticalScrollIndicator={false}
+         refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+         }
       >
          <View style={styles.container}>
             <View style={styles.contentContainer}>

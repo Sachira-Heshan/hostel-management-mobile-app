@@ -1,18 +1,18 @@
-import { View, Text } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { NavigationContainer } from '@react-navigation/native';
-import AppStack from './AppStack';
-import AuthStack from './AuthStack';
+import { View, Text } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { NavigationContainer } from "@react-navigation/native";
+import AppStack from "./AppStack";
+import AuthStack from "./AuthStack";
 
 const AppNav = () => {
-    // const userToken = null
-    const userToken = 'not-null'
+   // const userToken = null
+   const userToken = "not-null";
 
-    return (
-        <NavigationContainer>
-            {userToken !== null ? <AppStack /> : <AuthStack />}
-        </NavigationContainer>
-    )
-}
+   return (
+      <NavigationContainer>
+         {userToken !== null ? <AppStack /> : <AuthStack />}
+      </NavigationContainer>
+   );
+};
 
-export default AppNav
+export default AppNav;
