@@ -39,5 +39,25 @@
          "email": "2019e054@eng.jfn.ac.lk",
          "password": "12345"
       }
+   ],
+   "late_passes": [
+      {
+         "name": "Sachira Heshan",
+         "registration_number": "2019/E/055",
+         "reason": "Going to a competition",
+         "departure_date": "15 Nov 2023",
+         "departure_time": "6.00 PM",
+         "arrival_date": "18 Nov 2023",
+         "arrival_time": "6.00 AM"
+      },
+      {
+         "name": "Anuka Mithara",
+         "registration_number": "2019/E/054",
+         "reason": "Going to a competition",
+         "departure_date": "15 Nov 2023",
+         "departure_time": "6.00 PM",
+         "arrival_date": "18 Nov 2023",
+         "arrival_time": "6.00 AM"
+      }
    ]
 }
