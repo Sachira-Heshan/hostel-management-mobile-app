@@ -26,6 +26,11 @@
          "title": "Drinking water interrupt",
          "description": "There are no drinking water today from 12 pm to 6 pm",
          "image": ""
+      },
+      {
+         "title": "Payment Update",
+         "description": "Update your hostel fees payment within 1 week",
+         "image": ""
       }
    ],
    "users": [
