@@ -21,6 +21,7 @@ import AddAnnouncement from "../../screens/app/admin/announcements/AddAnnounceme
 import ViewAnnouncement from "../../screens/app/admin/announcements/ViewAnnouncement";
 import Notifications from "../../screens/app/admin/Notifications";
 import PendingRoomChecklist from "../../screens/app/admin/rooms/PendingRoomChecklist";
+import RoomAllocation from "../../screens/app/admin/rooms/RoomAllocation";
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -86,6 +87,10 @@ export const AdminRooms = () => {
          />
          <RoomsStack.Screen name="AdminRoomDetails" component={RoomDetails} />
          <RoomsStack.Screen name="AdminVacateRoom" component={VacateRoom} />
+         <RoomsStack.Screen
+            name="AdminRoomAllocation"
+            component={RoomAllocation}
+         />
       </RoomsStack.Navigator>
    );
 };
