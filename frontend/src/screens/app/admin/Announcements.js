@@ -87,7 +87,9 @@ const Announcements = ({ navigation }) => {
                               marginTop: -5,
                            }}
                            onPress={() => {
-                              navigation.navigate("AdminViewAnnouncement"); //placeholder navigation
+                              navigation.navigate("AdminViewAnnouncement", {
+                                 announcement: item,
+                              }); //placeholder navigation
                            }}
                         />
                      );
