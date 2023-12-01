@@ -63,9 +63,9 @@ const PendingRoomRequests = ({ navigation }) => {
                                  marginTop: -5,
                               }}
                               onPress={() => {
-                                 navigation.navigate(
-                                    "AdminAcceptedRoomRequests"
-                                 ); //placeholder navigation
+                                 navigation.navigate("AdminRoomAllocation", {
+                                    room_request: item,
+                                 }); //placeholder navigation
                               }}
                            />
                         );
