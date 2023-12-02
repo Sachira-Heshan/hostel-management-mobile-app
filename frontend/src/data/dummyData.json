@@ -154,5 +154,29 @@
          ],
          "reason": "Final year (4th year)"
       }
+   ],
+   "pending_room_checklists": [
+      {
+         "id": "450343432433",
+         "name": "Anuka Mithara",
+         "batch": "A18",
+         "faculty": "Faculty of Agriculture",
+         "date_assigned": "11 Nov 2023 @ 1.55 PM",
+         "member_details": [
+            {
+               "email": "2019e054@eng.jfn.ac.lk"
+            },
+            {
+               "email": "2019e055@eng.jfn.ac.lk"
+            },
+            {
+               "email": "2019e059@eng.jfn.ac.lk"
+            },
+            {
+               "email": "2019e060@eng.jfn.ac.lk"
+            }
+         ],
+         "reason": "Final year (4th year)"
+      }
    ]
 }
