@@ -8,7 +8,7 @@ import {
    textDarkGray,
    white,
 } from "../../../../constants/Colors";
-import { Button, List } from "react-native-paper";
+import { Avatar, Button, List } from "react-native-paper";
 import { useCallback, useState } from "react";
 
 const PendingRoomRequests = ({ navigation }) => {
@@ -43,19 +43,28 @@ const PendingRoomRequests = ({ navigation }) => {
                               title={item.name}
                               description={item.faculty}
                               left={(color = textDarkGray) => (
-                                 <List.Icon
-                                    color={color}
-                                    icon={"account-circle"}
-                                 />
+                                 <View style={styles.imageContainer}>
+                                    <Avatar.Image
+                                       size={50}
+                                       source={require("../../../../../assets/images/profile_pic.png")}
+                                    />
+                                 </View>
+                                 // <List.Icon
+                                 //    color={color}
+                                 //    icon={"account-circle"}
+                                 // />
                               )}
                               right={(props) => (
                                  <List.Icon {...props} icon={"chevron-right"} />
                               )}
                               style={{
                                  paddingLeft: 20,
-                                 backgroundColor: lightGray, //remove
+                                 width: "90%",
+                                 alignSelf: "center",
+                                 backgroundColor: white, //remove
                                  marginVertical: 8, //remove
                                  borderRadius: 6, //remove
+                                 elevation: 4,
                               }}
                               titleStyle={{ fontFamily: "fontRegular" }}
                               descriptionStyle={{
@@ -117,7 +126,7 @@ const styles = StyleSheet.create({
    },
    contentContainer: {
       flex: 1,
-      width: "90%",
+      width: "100%",
       alignItems: "center",
    },
    title: {
@@ -132,6 +141,12 @@ const styles = StyleSheet.create({
    },
    listStyles: {
       flex: 1,
+   },
+   imageContainer: {
+      backgroundColor: primaryBlue,
+      width: 50,
+      height: 50,
+      borderRadius: 50,
    },
 });
 
