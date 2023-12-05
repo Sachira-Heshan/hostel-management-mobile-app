@@ -1,14 +1,8 @@
-import { View, Text, Image, StyleSheet } from "react-native";
+import { useCallback, useState } from "react";
+import { View, Text, Image, StyleSheet, RefreshControl } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { SafeAreaView } from "react-native-safe-area-context";
-import {
-   black,
-   lightGray,
-   primaryBlue,
-   textLightGray,
-   white,
-} from "../../../constants/Colors";
-import { Button, TouchableRipple, Avatar } from "react-native-paper";
+import { textLightGray, white } from "../../../constants/Colors";
+import { TouchableRipple, Avatar } from "react-native-paper";
 
 const Rooms = ({ navigation }) => {
    var date = new Date();
@@ -27,11 +21,23 @@ const Rooms = ({ navigation }) => {
    //Get dummy data from the json file
    const data = require("../../../data/dummyData.json");
 
+   const [refreshing, setRefreshing] = useState(false);
+
+   const onRefresh = useCallback(() => {
+      setRefreshing(true);
+      setTimeout(() => {
+         setRefreshing(false);
+      }, 1500);
+   }, []);
+
    return (
       <ScrollView
          style={{ flex: 1 }}
          contentContainerStyle={{ backgroundColor: white, minHeight: "100%" }}
          showsVerticalScrollIndicator={false}
+         refreshControl={
+            <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
+         }
       >
          <View style={styles.container}>
             <View style={styles.contentContainer}>

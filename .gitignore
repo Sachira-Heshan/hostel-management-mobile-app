@@ -35,7 +35,9 @@ frontend/.env*.local
 frontend/*.tsbuildinfo
 
 
+frontend/temp.js
+
 # backend
 backend/node_modules
-backend/src/.env
+backend/.env
 
