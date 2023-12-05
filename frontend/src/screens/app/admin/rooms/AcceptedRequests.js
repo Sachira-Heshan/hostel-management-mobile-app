@@ -53,10 +53,11 @@ const AcceptedRoomRequests = ({ navigation }) => {
                                  <List.Icon {...props} icon={"chevron-right"} />
                               )}
                               style={{
-                                 paddingLeft: 20,
+                                 paddingLeft: 15,
+                                 elevation: 5,
                                  backgroundColor: lightGreen, //remove
                                  marginVertical: 8, //remove
-                                 borderRadius: 6, //remove
+                                 borderRadius: 8, //remove
                               }}
                               titleStyle={{ fontFamily: "fontRegular" }}
                               descriptionStyle={{

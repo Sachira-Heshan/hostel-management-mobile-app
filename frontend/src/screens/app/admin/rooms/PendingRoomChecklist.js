@@ -54,13 +54,13 @@ const PendingRoomChecklist = ({ navigation }) => {
                                  <List.Icon {...props} icon={"chevron-right"} />
                               )}
                               style={{
-                                 paddingLeft: 20,
+                                 paddingLeft: 15,
                                  width: "90%",
                                  alignSelf: "center",
                                  backgroundColor: white, //remove
                                  marginVertical: 8, //remove
-                                 borderRadius: 6, //remove
-                                 elevation: 4,
+                                 borderRadius: 8, //remove
+                                 elevation: 5,
                               }}
                               titleStyle={{ fontFamily: "fontRegular" }}
                               descriptionStyle={{

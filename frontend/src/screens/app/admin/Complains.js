@@ -3,12 +3,14 @@ import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
    black,
+   darkGreen,
+   darkRed,
    lightGray,
    primaryBlue,
    textDarkGray,
    white,
 } from "../../../constants/Colors";
-import { Button, List } from "react-native-paper";
+import { Button, List, TouchableRipple, Avatar } from "react-native-paper";
 import { useCallback, useState } from "react";
 
 const Complains = ({ navigation }) => {
@@ -43,19 +45,58 @@ const Complains = ({ navigation }) => {
                               title={item.title}
                               description={<Text>{item.description}</Text>}
                               left={(color = textDarkGray) => (
-                                 <List.Icon
-                                    color={color}
-                                    icon={"account-circle"}
-                                 />
+                                 <View style={styles.imageContainer}>
+                                    <Avatar.Image
+                                       size={50}
+                                       source={require("../../../../assets/images/profile_pic.png")}
+                                    />
+                                 </View>
+                                 // <List.Icon
+                                 //    color={color}
+                                 //    icon={"account-circle"}
+                                 // />
                               )}
                               right={(props) => (
-                                 <List.Icon {...props} icon={"chevron-right"} />
+                                 <View
+                                    style={{
+                                       flexDirection: "row",
+                                       alignItems: "center",
+                                    }}
+                                 >
+                                    <TouchableRipple
+                                    // onPress={() => {
+                                    //    showDeleteAnnouncementDialog();
+                                    //    setClickedItem(item);
+                                    // }}
+                                    >
+                                       <List.Icon
+                                          {...props}
+                                          icon={"close"}
+                                          color={darkRed}
+                                       />
+                                    </TouchableRipple>
+                                    <TouchableRipple
+                                    // onPress={() => {
+                                    //    showDeleteAnnouncementDialog();
+                                    //    setClickedItem(item);
+                                    // }}
+                                    >
+                                       <List.Icon
+                                          {...props}
+                                          icon={"check"}
+                                          color={darkGreen}
+                                       />
+                                    </TouchableRipple>
+                                 </View>
                               )}
                               style={{
-                                 paddingLeft: 20,
-                                 backgroundColor: lightGray, //remove
+                                 paddingLeft: 15,
+                                 elevation: 5,
+                                 backgroundColor: white,
+                                 width: "90%",
+                                 alignSelf: "center",
                                  marginVertical: 8, //remove
-                                 borderRadius: 6, //remove
+                                 borderRadius: 8, //remove
                               }}
                               titleStyle={{ fontFamily: "fontRegular" }}
                               descriptionStyle={{
@@ -117,7 +158,7 @@ const styles = StyleSheet.create({
    },
    contentContainer: {
       flex: 1,
-      width: "90%",
+      width: "100%",
       alignItems: "center",
    },
    title: {
@@ -133,6 +174,13 @@ const styles = StyleSheet.create({
    listStyles: {
       flex: 1,
       marginTop: 10,
+   },
+   imageContainer: {
+      backgroundColor: primaryBlue,
+      width: 50,
+      height: 50,
+      borderRadius: 50,
+      alignSelf: "center",
    },
 });
 

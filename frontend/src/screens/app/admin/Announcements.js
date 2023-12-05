@@ -7,6 +7,7 @@ import {
    darkRed,
    lightGray,
    primaryBlue,
+   textDarkGray,
    textLightGray,
    white,
 } from "../../../constants/Colors";
@@ -17,6 +18,7 @@ import {
    List,
    Portal,
    Dialog,
+   Avatar,
 } from "react-native-paper";
 
 const Announcements = ({ navigation }) => {
@@ -58,12 +60,18 @@ const Announcements = ({ navigation }) => {
                         <List.Item
                            key={item.id}
                            title={item.title}
-                           //    description={item.description}
+                           description={item.description}
                            left={(color = textDarkGray) => (
-                              <List.Icon
-                                 color={color}
-                                 icon={"account-circle"}
-                              />
+                              <View style={styles.imageContainer}>
+                                 <Avatar.Image
+                                    size={40}
+                                    source={require("../../../../assets/images/announcement.png")}
+                                 />
+                              </View>
+                              // <List.Icon
+                              //    color={color}
+                              //    icon={"account-circle"}
+                              // />
                            )}
                            right={(props) => (
                               <TouchableRipple
@@ -71,15 +79,23 @@ const Announcements = ({ navigation }) => {
                                     showDeleteAnnouncementDialog();
                                     setClickedItem(item);
                                  }}
+                                 style={{ justifyContent: "center" }}
                               >
-                                 <List.Icon {...props} icon={"close"} />
+                                 <List.Icon
+                                    {...props}
+                                    icon={"close"}
+                                    color={darkRed}
+                                 />
                               </TouchableRipple>
                            )}
                            style={{
-                              paddingLeft: 20,
-                              backgroundColor: lightGray, //remove
+                              paddingLeft: 15,
+                              elevation: 5,
+                              width: "90%",
+                              backgroundColor: white,
+                              alignSelf: "center",
                               marginVertical: 8, //remove
-                              borderRadius: 6, //remove
+                              borderRadius: 8, //remove
                            }}
                            titleStyle={{ fontFamily: "fontRegular" }}
                            descriptionStyle={{
@@ -110,15 +126,23 @@ const Announcements = ({ navigation }) => {
                      </View>
                   }
                   ListHeaderComponent={
-                     <View style={{ width: "100%", alignItems: "center" }}>
+                     <View
+                        style={{
+                           width: "90%",
+                           alignItems: "center",
+                           alignSelf: "center",
+                        }}
+                     >
                         <TouchableRipple
                            style={{
                               width: "100%",
                               margin: 15,
                               padding: 15,
                               paddingHorizontal: 20,
-                              borderRadius: 6,
-                              backgroundColor: primaryBlue,
+                              borderRadius: 8,
+                              // backgroundColor: primaryBlue,
+                              borderColor: primaryBlue,
+                              borderWidth: 1,
                            }}
                            onPress={() =>
                               navigation.navigate("AdminAddAnnouncement")
@@ -127,7 +151,7 @@ const Announcements = ({ navigation }) => {
                            <View style={styles.addAnnouncement}>
                               <Text
                                  style={{
-                                    color: white,
+                                    color: textDarkGray,
                                     fontFamily: "fontRegular",
                                     fontSize: 16,
                                  }}
@@ -136,7 +160,7 @@ const Announcements = ({ navigation }) => {
                               </Text>
                               <Icon
                                  source={"plus-box"}
-                                 color={white}
+                                 color={primaryBlue}
                                  size={24}
                               />
                            </View>
@@ -232,7 +256,7 @@ const styles = StyleSheet.create({
    },
    contentContainer: {
       flex: 1,
-      width: "90%",
+      width: "100%",
       alignItems: "center",
    },
    title: {
@@ -253,6 +277,13 @@ const styles = StyleSheet.create({
    announcementDialog: {
       backgroundColor: lightGray,
       borderRadius: 12,
+   },
+   imageContainer: {
+      backgroundColor: primaryBlue,
+      width: 40,
+      height: 40,
+      borderRadius: 40,
+      alignSelf: "center",
    },
 });
 
