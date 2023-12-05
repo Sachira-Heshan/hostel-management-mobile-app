@@ -1,13 +1,13 @@
 import { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { SafeAreaView } from "react-native-safe-area-context";
 import {
+   primaryBlue,
    textDarkGray,
    textLightGray,
    white,
 } from "../../../../constants/Colors";
-import { Button, IconButton } from "react-native-paper";
+import { Button, IconButton, DataTable } from "react-native-paper";
 
 const RoomChecklistForm = ({ navigation, route }) => {
    const { checklist_form } = route.params;
@@ -95,6 +95,174 @@ const RoomChecklistForm = ({ navigation, route }) => {
                ></View>
                <Text style={styles.infoTextDesc}>Room Furniture Details</Text>
                {/* After this room furniture details */}
+               <View style={styles.furnitureDetailsTableContainer}>
+                  <DataTable style={styles.furnitureDetailsTable}>
+                     <DataTable.Header>
+                        <DataTable.Title
+                           style={{
+                              flex: 1,
+                              borderRightColor: textLightGray,
+                              borderRightWidth: 1,
+                           }}
+                           textStyle={{
+                              fontFamily: "fontRegular",
+                              fontSize: 16,
+                           }}
+                        >
+                           No
+                        </DataTable.Title>
+                        <DataTable.Title
+                           style={{
+                              flex: 4,
+                              borderRightColor: textLightGray,
+                              borderRightWidth: 1,
+                           }}
+                           textStyle={{
+                              fontFamily: "fontRegular",
+                              fontSize: 16,
+                              paddingLeft: 10,
+                           }}
+                        >
+                           Item
+                        </DataTable.Title>
+                        <DataTable.Title
+                           style={{
+                              flex: 2,
+                              borderRightColor: textLightGray,
+                              borderRightWidth: 1,
+                           }}
+                           textStyle={{
+                              fontFamily: "fontRegular",
+                              fontSize: 16,
+                              paddingLeft: 10,
+                           }}
+                        >
+                           Condition
+                        </DataTable.Title>
+                        <DataTable.Title
+                           style={{ flex: 1 }}
+                           textStyle={{
+                              fontFamily: "fontRegular",
+                              fontSize: 16,
+                              paddingLeft: 10,
+                           }}
+                        >
+                           Qt
+                        </DataTable.Title>
+                     </DataTable.Header>
+                     {checklist_form.room_furniture_details.map((furniture) => {
+                        return (
+                           <DataTable.Row
+                              key={furniture.id}
+                              style={{
+                                 borderTopColor: textLightGray,
+                                 borderTopWidth: 1,
+                              }}
+                           >
+                              <DataTable.Cell
+                                 style={{
+                                    flex: 1,
+                                    borderRightColor: textLightGray,
+                                    borderRightWidth: 1,
+                                 }}
+                                 textStyle={{
+                                    fontFamily: "fontRegular",
+                                    fontSize: 16,
+                                 }}
+                              >
+                                 {furniture.id}
+                              </DataTable.Cell>
+                              <DataTable.Cell
+                                 style={{
+                                    flex: 4,
+                                    borderRightColor: textLightGray,
+                                    borderRightWidth: 1,
+                                 }}
+                                 textStyle={{
+                                    fontFamily: "fontRegular",
+                                    fontSize: 16,
+                                    paddingLeft: 10,
+                                 }}
+                              >
+                                 {furniture.item}
+                              </DataTable.Cell>
+                              <DataTable.Cell
+                                 style={{
+                                    flex: 2,
+                                    borderRightColor: textLightGray,
+                                    borderRightWidth: 1,
+                                 }}
+                                 textStyle={{
+                                    fontFamily: "fontRegular",
+                                    fontSize: 16,
+                                    paddingLeft: 10,
+                                 }}
+                              >
+                                 {furniture.condition}
+                              </DataTable.Cell>
+                              <DataTable.Cell
+                                 style={{ flex: 1 }}
+                                 textStyle={{
+                                    fontFamily: "fontRegular",
+                                    fontSize: 16,
+                                    paddingLeft: 10,
+                                 }}
+                              >
+                                 {furniture.quantity}
+                              </DataTable.Cell>
+                           </DataTable.Row>
+                        );
+                     })}
+                  </DataTable>
+               </View>
+               <View
+                  style={{
+                     width: "100%",
+                     height: 1,
+                     backgroundColor: textLightGray,
+                     marginTop: 15,
+                  }}
+               ></View>
+               <Text style={styles.infoTextDesc}>Item Condition Details</Text>
+               <Text
+                  style={{
+                     width: "100%",
+                     fontFamily: "fontRegular",
+                     marginVertical: 8,
+                  }}
+               >
+                  {checklist_form.item_condition_details}
+               </Text>
+               <View style={styles.actionButtonContainer}>
+                  <Button
+                     mode="outlined"
+                     style={{
+                        width: "48%",
+                        borderRadius: 8,
+                        borderColor: primaryBlue,
+                     }}
+                     labelStyle={{
+                        fontFamily: "fontRegular",
+                        fontSize: 16,
+                        color: primaryBlue,
+                     }}
+                     // onPress={showDeclineModal}
+                  >
+                     Decline
+                  </Button>
+                  <Button
+                     mode="contained"
+                     style={{ width: "48%", borderRadius: 8 }}
+                     buttonColor={primaryBlue}
+                     labelStyle={{
+                        fontFamily: "fontRegular",
+                        fontSize: 16,
+                     }}
+                     // onPress={handleSubmit}
+                  >
+                     Accept
+                  </Button>
+               </View>
             </View>
          </View>
       </ScrollView>
@@ -161,6 +329,22 @@ const styles = StyleSheet.create({
       flexDirection: "row",
       justifyContent: "space-between",
       marginTop: 15,
+   },
+   actionButtonContainer: {
+      width: "100%",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      marginVertical: 15,
+   },
+   furnitureDetailsTableContainer: {
+      width: "100%",
+      marginVertical: 10,
+   },
+   furnitureDetailsTable: {
+      // backgroundColor: textLightGray,
+      borderRadius: 8,
+      borderWidth: 1,
+      borderColor: textLightGray,
    },
    actionButtonContainer: {
       width: "100%",

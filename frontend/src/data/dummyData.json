@@ -176,7 +176,82 @@
                "email": "2019e060@eng.jfn.ac.lk"
             }
          ],
-         "reason": "Final year (4th year)"
+         "reason": "Final year (4th year)",
+         "room_furniture_details": [
+            {
+               "id": "01",
+               "item": "Bunk Bed - Wooden",
+               "condition": "New",
+               "quantity": "2"
+            },
+            {
+               "id": "02",
+               "item": "Study table - wooden",
+               "condition": "New",
+               "quantity": "4"
+            },
+            {
+               "id": "03",
+               "item": "Chair - wooden",
+               "condition": "New",
+               "quantity": "4"
+            },
+            {
+               "id": "04",
+               "item": "Cloth rack - wooden",
+               "condition": "New",
+               "quantity": "2"
+            },
+            {
+               "id": "05",
+               "item": "Wall mounted light",
+               "condition": "New",
+               "quantity": "2"
+            },
+            {
+               "id": "06",
+               "item": "Balcony light",
+               "condition": "New",
+               "quantity": "1"
+            },
+            {
+               "id": "07",
+               "item": "Fan with regulator",
+               "condition": "New",
+               "quantity": "1"
+            },
+            {
+               "id": "08",
+               "item": "Socket",
+               "condition": "New",
+               "quantity": "2"
+            },
+            {
+               "id": "09",
+               "item": "Switch",
+               "condition": "New",
+               "quantity": "1"
+            },
+            {
+               "id": "10",
+               "item": "Main door key",
+               "condition": "New",
+               "quantity": "2"
+            },
+            {
+               "id": "11",
+               "item": "Window door key",
+               "condition": "New",
+               "quantity": "1"
+            },
+            {
+               "id": "12",
+               "item": "Mattress",
+               "condition": "New",
+               "quantity": "4"
+            }
+         ],
+         "item_condition_details": "Window broken, Door broken, Plug not working, Light not working"
       }
    ]
 }
