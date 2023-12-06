@@ -233,6 +233,48 @@ const Dashboard = ({ navigation }) => {
                      </View>
                   </TouchableRipple>
                </View>
+               <View style={[styles.quickButtons, { marginBottom: 15 }]}>
+                  <TouchableRipple
+                     onPress={() =>
+                        navigation.navigate("AdminPaymentReceiptsDashboard")
+                     }
+                     style={styles.dashboardCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/payment_receipts.png")}
+                           style={styles.cardImg}
+                        />
+                        <Text style={styles.cardText}>Payment Receipts</Text>
+                     </View>
+                  </TouchableRipple>
+                  <TouchableRipple
+                     onPress={() =>
+                        navigation.navigate("AdminHostelRulesDashboard")
+                     }
+                     style={styles.dashboardCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/hostel_rules.png")}
+                           style={styles.cardImg}
+                        />
+                        <Text style={styles.cardText}>Hostel Rules</Text>
+                     </View>
+                  </TouchableRipple>
+               </View>
             </View>
          </View>
       </ScrollView>
