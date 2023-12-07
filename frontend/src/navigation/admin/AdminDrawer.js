@@ -23,6 +23,9 @@ import Notifications from "../../screens/app/admin/Notifications";
 import PendingRoomChecklist from "../../screens/app/admin/rooms/PendingRoomChecklist";
 import RoomAllocation from "../../screens/app/admin/rooms/RoomAllocation";
 import RoomChecklistForm from "../../screens/app/admin/rooms/RoomChecklistForm";
+import PaymentReceipts from "../../screens/app/admin/PaymentReceipts";
+import ViewPaymentReceipt from "../../screens/app/admin/payment_receipts/ViewPaymentReceipt";
+import HostelRules from "../../screens/app/admin/HostelRules";
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -56,6 +59,18 @@ export const AdminDashboard = () => {
          <DashboardStack.Screen
             name="AdminLatePassesDashboard"
             component={AdminLatePasses}
+         />
+         <DashboardStack.Screen
+            name="AdminPaymentReceiptsDashboard"
+            component={PaymentReceipts}
+         />
+         <DashboardStack.Screen
+            name="AdminViewPaymentReceipt"
+            component={ViewPaymentReceipt}
+         />
+         <DashboardStack.Screen
+            name="AdminHostelRulesDashboard"
+            component={HostelRules}
          />
          <DashboardStack.Screen
             name="AdminNotifications"

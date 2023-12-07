@@ -253,5 +253,31 @@
          ],
          "item_condition_details": "Window broken, Door broken, Plug not working, Light not working"
       }
+   ],
+   "payment_receipts": [
+      {
+         "id": "1",
+         "name": "Anuka Mithara",
+         "registration_number": "2019/E/054",
+         "amount": "Rs. 3000",
+         "reason": "Year payment",
+         "receipt": ""
+      },
+      {
+         "id": "2",
+         "name": "Chamod Lakshan",
+         "registration_number": "2019/E/059",
+         "amount": "Rs. 3000",
+         "reason": "Year payment",
+         "receipt": ""
+      },
+      {
+         "id": "3",
+         "name": "Yasiru Kawsala",
+         "registration_number": "2019/E/060",
+         "amount": "Rs. 3000",
+         "reason": "Year payment",
+         "receipt": ""
+      }
    ]
 }
