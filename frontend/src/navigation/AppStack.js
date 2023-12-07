@@ -1,5 +1,5 @@
+import { useContext } from "react";
 import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
 
 import {
    createDrawerNavigator,
@@ -16,19 +16,19 @@ import {
 } from "../navigation/admin/AdminDrawer";
 import { IconButton, Icon, Button } from "react-native-paper";
 import {
-   black,
    lightGray,
    primaryBlue,
-   seperatorColor,
    textDarkGray,
-   textLightGray,
    white,
 } from "../constants/Colors";
+
+import { AuthContext } from "../context/AuthContext";
 
 const Drawer = createDrawerNavigator();
 
 const AdminDrawer = () => {
    const data = require("../data/dummyData.json");
+   const { logout } = useContext(AuthContext);
 
    return (
       <Drawer.Navigator
@@ -84,6 +84,7 @@ const AdminDrawer = () => {
                         textColor={textDarkGray}
                         labelStyle={{ fontFamily: "fontMedium", fontSize: 16 }}
                         style={{ borderRadius: 6 }}
+                        onPress={() => logout()}
                      >
                         Sign out
                      </Button>

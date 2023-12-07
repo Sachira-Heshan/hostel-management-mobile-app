@@ -40,7 +40,8 @@
          "email": "2019e055@eng.jfn.ac.lk",
          "password": "123",
          "batch": "E19",
-         "faculty": "Faculty of Engineering"
+         "faculty": "Faculty of Engineering",
+         "type": "student"
       },
       {
          "profile_picture": "",
@@ -48,7 +49,8 @@
          "email": "2019e054@eng.jfn.ac.lk",
          "password": "12345",
          "batch": "A18",
-         "faculty": "Faculty of Agriculture"
+         "faculty": "Faculty of Agriculture",
+         "type": "student"
       },
       {
          "profile_picture": "",
@@ -56,7 +58,8 @@
          "email": "2019e060@eng.jfn.ac.lk",
          "password": "12345",
          "batch": "ET18",
-         "faculty": "Faculty of Technology"
+         "faculty": "Faculty of Technology",
+         "type": "student"
       },
       {
          "profile_picture": "",
@@ -64,7 +67,8 @@
          "email": "2019e059@eng.jfn.ac.lk",
          "password": "12345678",
          "batch": "E19",
-         "faculty": "Faculty of Engineering"
+         "faculty": "Faculty of Engineering",
+         "type": "student"
       }
    ],
    "late_passes": [
