@@ -13,7 +13,7 @@ const userRegister = asyncHandler(async (req, res) => {
       registration_no,
       gender,
    } = req.body;
-   if (!email || !password || !registration_no || !mobile_no) {
+   if (!email || !password || !mobile_no) {
       res.status(400);
       throw new Error("All fields are required!");
    }

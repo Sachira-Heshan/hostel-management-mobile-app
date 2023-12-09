@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { View, Text, Image, StyleSheet, FlatListComponent } from "react-native";
+import { View, Text, Image, StyleSheet, ToastAndroid } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Button, TextInput, Checkbox, IconButton } from "react-native-paper";
 
@@ -21,11 +21,18 @@ const Login = ({ navigation }) => {
    const [rememberMe, setRememberMe] = useState(false);
    const [showPassword, setShowPassword] = useState(false);
 
-   const { login, isLoading } = useContext(AuthContext);
+   const { login, err, isLoading } = useContext(AuthContext);
+
+   const showToast = () => {
+      ToastAndroid.show("User login successfully!", ToastAndroid.SHORT);
+   };
 
    const handleLogin = (values) => {
       //login
       login(values.email, values.password);
+      if (!err) {
+         showToast();
+      }
    };
 
    const handleMicrosoftLogin = () => {

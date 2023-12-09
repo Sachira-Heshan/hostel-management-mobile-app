@@ -8,3 +8,6 @@ export const primaryBlue = "#0D6EFD";
 export const white = "#FFFFFF";
 export const black = "#000000";
 export const seperatorColor = "#5C5E64";
+export const orangeDark = "#FF6103";
+export const yellowDark = "#F9D200";
+export const yellowMark = "#F9B600";

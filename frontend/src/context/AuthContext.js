@@ -10,6 +10,8 @@ export const AuthProvider = ({ children }) => {
    const [userToken, setUserToken] = useState(null);
    const [userInfo, setUserInfo] = useState(null);
 
+   const [err, setErr] = useState(null);
+
    const isLoggedIn = async () => {
       setIsLoading(true);
       try {
@@ -22,6 +24,7 @@ export const AuthProvider = ({ children }) => {
          }
          setIsLoading(false);
       } catch (e) {
+         setErr(e);
          console.log(`Error: ${e}`);
       }
    };
@@ -47,6 +50,7 @@ export const AuthProvider = ({ children }) => {
             );
          })
          .catch((e) => {
+            setErr(e);
             console.log(`Error: ${e}`);
          });
       setIsLoading(false);
@@ -63,7 +67,7 @@ export const AuthProvider = ({ children }) => {
 
    return (
       <AuthContext.Provider
-         value={{ login, logout, isLoading, userToken, userInfo }}
+         value={{ login, logout, err, isLoading, userToken, userInfo }}
       >
          {children}
       </AuthContext.Provider>

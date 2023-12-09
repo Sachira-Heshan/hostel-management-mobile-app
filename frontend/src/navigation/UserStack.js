@@ -6,14 +6,16 @@ import {
    DrawerItemList,
    DrawerContentScrollView,
 } from "@react-navigation/drawer";
+
 import {
-   AdminAnnouncements,
-   AdminComplains,
-   AdminDashboard,
-   AdminLatePasses,
-   AdminRooms,
-   AdminSettings,
-} from "../navigation/admin/AdminDrawer";
+   UserDashboard,
+   UserAnnouncements,
+   UserComplains,
+   UserLatePasses,
+   UserRooms,
+   UserSettings,
+} from "./user/UserDrawer";
+
 import { IconButton, Icon, Button } from "react-native-paper";
 import {
    lightGray,
@@ -27,7 +29,7 @@ import { AuthContext } from "../context/AuthContext";
 
 const Drawer = createDrawerNavigator();
 
-const AdminDrawer = () => {
+const UserDrawer = () => {
    const data = require("../data/dummyData.json");
    const { logout } = useContext(AuthContext);
 
@@ -128,9 +130,9 @@ const AdminDrawer = () => {
       >
          <Drawer.Screen
             name="Home"
-            component={AdminDashboard}
+            component={UserDashboard}
             options={{
-               headerTitle: "Admin Dashboard",
+               headerTitle: "User Dashboard",
                drawerIcon: ({ color, size }) => {
                   return <Icon source={"home"} size={size} color={color} />;
                },
@@ -138,7 +140,7 @@ const AdminDrawer = () => {
          />
          <Drawer.Screen
             name="Rooms"
-            component={AdminRooms}
+            component={UserRooms}
             options={{
                drawerIcon: ({ color, size }) => {
                   return (
@@ -153,7 +155,7 @@ const AdminDrawer = () => {
          />
          <Drawer.Screen
             name="Announcements"
-            component={AdminAnnouncements}
+            component={UserAnnouncements}
             options={{
                drawerIcon: ({ color, size }) => {
                   return <Icon source={"bullhorn"} size={size} color={color} />;
@@ -162,7 +164,7 @@ const AdminDrawer = () => {
          />
          <Drawer.Screen
             name="Complains"
-            component={AdminComplains}
+            component={UserComplains}
             options={{
                drawerIcon: ({ color, size }) => {
                   return (
@@ -173,7 +175,7 @@ const AdminDrawer = () => {
          />
          <Drawer.Screen
             name="Late Passes"
-            component={AdminLatePasses}
+            component={UserLatePasses}
             options={{
                drawerIcon: ({ color, size }) => {
                   return (
@@ -184,7 +186,7 @@ const AdminDrawer = () => {
          />
          <Drawer.Screen
             name="Settings"
-            component={AdminSettings}
+            component={UserSettings}
             options={{
                drawerIcon: ({ color, size }) => {
                   return <Icon source={"cog"} size={size} color={color} />;
@@ -219,4 +221,4 @@ const styles = StyleSheet.create({
    },
 });
 
-export default AdminDrawer;
+export default UserDrawer;

@@ -5,9 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import {
    black,
    lightGray,
+   orangeDark,
    primaryBlue,
    textDarkGray,
    white,
+   yellowDark,
+   yellowMark,
 } from "../../../constants/Colors";
 import { Button, TouchableRipple } from "react-native-paper";
 import CircularProgress from "react-native-circular-progress-indicator";
@@ -58,14 +61,14 @@ const Dashboard = ({ navigation }) => {
                            value={253}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={orangeDark}
                            maxValue={400}
                            title="Block B"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={orangeDark}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={orangeDark}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
@@ -75,14 +78,14 @@ const Dashboard = ({ navigation }) => {
                            value={178}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={yellowMark}
                            maxValue={400}
                            title="Block C"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={yellowMark}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={yellowMark}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
@@ -114,14 +117,14 @@ const Dashboard = ({ navigation }) => {
                            value={65}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={orangeDark}
                            maxValue={100}
                            title="Block B"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={orangeDark}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={orangeDark}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
@@ -131,14 +134,14 @@ const Dashboard = ({ navigation }) => {
                            value={48}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={yellowMark}
                            maxValue={100}
                            title="Block C"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={yellowMark}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={yellowMark}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
