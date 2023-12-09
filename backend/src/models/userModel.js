@@ -32,7 +32,6 @@ const userSchema = mongoose.Schema(
       },
       registration_no: {
          type: String,
-         required: [true, "Registration no is required!"],
       },
       gender: {
          type: String,

@@ -200,13 +200,13 @@ export const AdminSettings = () => {
 export const AdminNotifications = () => {
    return (
       <NotificationsStack.Navigator
-         initialRouteName="AdminNotifications"
+         initialRouteName="AdminNotificationsView"
          screenOptions={{
             headerShown: false,
          }}
       >
          <NotificationsStack.Screen
-            name="AdminNotifications"
+            name="AdminNotificationsView"
             component={Notifications}
          />
       </NotificationsStack.Navigator>
