@@ -1,11 +1,30 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useContext } from "react";
 import { View, Text, Image, RefreshControl, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import { white } from "../../../constants/Colors";
-import { Button, TouchableRipple } from "react-native-paper";
+import { white, textLightGray } from "../../../constants/Colors";
+import { Button, Avatar, TouchableRipple } from "react-native-paper";
+
+import { AuthContext } from "../../../context/AuthContext";
 
 const Dashboard = ({ navigation }) => {
    const [refreshing, setRefreshing] = useState(false);
+
+   const { userInfo } = useContext(AuthContext);
+
+   const data = require("../../../data/dummyData.json");
+
+   var date = new Date();
+   var hours = date.getHours();
+   var greet = "Greetings!";
+
+   //Greeting based on the time of the day
+   if (hours < 12) {
+      greet = "Good Morning!";
+   } else if (hours < 15) {
+      greet = "Good Afternoon!";
+   } else {
+      greet = "Good Evening!";
+   }
 
    const onRefresh = useCallback(() => {
       setRefreshing(true);
@@ -25,13 +44,40 @@ const Dashboard = ({ navigation }) => {
       >
          <View style={styles.container}>
             <View style={styles.contentContainer}>
+               <View style={styles.profileDetails}>
+                  <Avatar.Image
+                     size={75}
+                     source={require("../../../../assets/images/profile_pic.png")}
+                  />
+                  <View style={styles.profileText}>
+                     <Text
+                        style={{
+                           fontFamily: "fontRegular",
+                           fontSize: 16,
+                           color: textLightGray,
+                        }}
+                     >
+                        {greet}
+                     </Text>
+                     <Text
+                        style={{
+                           fontFamily: "fontBold",
+                           fontSize: 16,
+                           marginTop: -5,
+                        }}
+                     >
+                        {userInfo.full_name}
+                     </Text>
+                  </View>
+               </View>
+               <View style={styles.quickButtons}>
+                  <View style={styles.recentAnnouncement}>
+                     <Text>Recent Announcement</Text>
+                  </View>
+               </View>
                <View style={styles.quickButtons}>
                   <TouchableRipple
-                     onPress={() =>
-                        navigation.navigate("AdminRoomsDashboard", {
-                           screen: "AdminPendingRoomRequests",
-                        })
-                     }
+                     onPress={() => navigation.navigate("UserRoomsDashboard")}
                      style={styles.dashboardCard}
                   >
                      <View
@@ -43,15 +89,15 @@ const Dashboard = ({ navigation }) => {
                      >
                         <Image
                            source={require("../../../../assets/images/room_management.png")}
-                           style={styles.cardImg}
+                           style={[styles.cardImg, { marginVertical: 10 }]}
                         />
-                        <Text style={styles.cardText}>Room Management</Text>
+                        <Text style={styles.cardText}>Request Room</Text>
                      </View>
                   </TouchableRipple>
 
                   <TouchableRipple
                      onPress={() =>
-                        navigation.navigate("AdminAnnouncementsDashboard")
+                        navigation.navigate("UserRoomsAcceptanceDashboard")
                      }
                      style={styles.dashboardCard}
                   >
@@ -63,60 +109,17 @@ const Dashboard = ({ navigation }) => {
                         }}
                      >
                         <Image
-                           source={require("../../../../assets/images/announcements.png")}
+                           source={require("../../../../assets/images/accepted_requests.png")}
                            style={styles.cardImg}
                         />
-                        <Text style={styles.cardText}>Announcements</Text>
+                        <Text style={styles.cardText}>Room Acceptance</Text>
                      </View>
                   </TouchableRipple>
                </View>
                <View style={styles.quickButtons}>
                   <TouchableRipple
                      onPress={() =>
-                        navigation.navigate("AdminComplainsDashboard")
-                     }
-                     style={styles.dashboardCard}
-                  >
-                     <View
-                        style={{
-                           alignItems: "center",
-                           paddingHorizontal: 15,
-                           paddingVertical: 20,
-                        }}
-                     >
-                        <Image
-                           source={require("../../../../assets/images/complains.png")}
-                           style={styles.cardImg}
-                        />
-                        <Text style={styles.cardText}>Complains</Text>
-                     </View>
-                  </TouchableRipple>
-
-                  <TouchableRipple
-                     onPress={() =>
-                        navigation.navigate("AdminLatePassesDashboard")
-                     }
-                     style={styles.dashboardCard}
-                  >
-                     <View
-                        style={{
-                           alignItems: "center",
-                           paddingHorizontal: 15,
-                           paddingVertical: 20,
-                        }}
-                     >
-                        <Image
-                           source={require("../../../../assets/images/late_passes.png")}
-                           style={styles.cardImg}
-                        />
-                        <Text style={styles.cardText}>Late Passes</Text>
-                     </View>
-                  </TouchableRipple>
-               </View>
-               <View style={[styles.quickButtons, { marginBottom: 15 }]}>
-                  <TouchableRipple
-                     onPress={() =>
-                        navigation.navigate("AdminPaymentReceiptsDashboard")
+                        navigation.navigate("UserPaymentReceiptsDashboard")
                      }
                      style={styles.dashboardCard}
                   >
@@ -134,9 +137,32 @@ const Dashboard = ({ navigation }) => {
                         <Text style={styles.cardText}>Payment Receipts</Text>
                      </View>
                   </TouchableRipple>
+
                   <TouchableRipple
                      onPress={() =>
-                        navigation.navigate("AdminHostelRulesDashboard")
+                        navigation.navigate("UserComplainsDashboard")
+                     }
+                     style={styles.dashboardCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/complains.png")}
+                           style={[styles.cardImg, { marginVertical: 10 }]}
+                        />
+                        <Text style={styles.cardText}>Complains</Text>
+                     </View>
+                  </TouchableRipple>
+               </View>
+               <View style={styles.quickButtons}>
+                  <TouchableRipple
+                     onPress={() =>
+                        navigation.navigate("UserHostelRulesDashboard")
                      }
                      style={styles.dashboardCard}
                   >
@@ -152,6 +178,48 @@ const Dashboard = ({ navigation }) => {
                            style={styles.cardImg}
                         />
                         <Text style={styles.cardText}>Hostel Rules</Text>
+                     </View>
+                  </TouchableRipple>
+                  <TouchableRipple
+                     onPress={() =>
+                        navigation.navigate("UserLatePassesDashboard")
+                     }
+                     style={styles.dashboardCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/late_passes.png")}
+                           style={[styles.cardImg, { marginVertical: 10 }]}
+                        />
+                        <Text style={styles.cardText}>Late Passes</Text>
+                     </View>
+                  </TouchableRipple>
+               </View>
+               <View style={[styles.quickButtons, { marginBottom: 15 }]}>
+                  <TouchableRipple
+                     onPress={() =>
+                        navigation.navigate("UserAnnouncementsDashboard")
+                     }
+                     style={styles.dashboardCard}
+                  >
+                     <View
+                        style={{
+                           alignItems: "center",
+                           paddingHorizontal: 15,
+                           paddingVertical: 20,
+                        }}
+                     >
+                        <Image
+                           source={require("../../../../assets/images/announcements.png")}
+                           style={[styles.cardImg, { marginVertical: 10 }]}
+                        />
+                        <Text style={styles.cardText}>Announcements</Text>
                      </View>
                   </TouchableRipple>
                </View>
@@ -174,28 +242,29 @@ const styles = StyleSheet.create({
       width: "90%",
       alignItems: "center",
    },
-   capacityCard: {
-      marginTop: 10,
+   profileDetails: {
       width: "100%",
+      marginTop: 15,
+      flexDirection: "row",
       alignItems: "center",
-      justifyContent: "center",
-      borderRadius: 6,
-      backgroundColor: white,
-      elevation: 4,
    },
    title: {
       width: "90%",
-      fontFamily: "fontBold",
-      fontSize: 18,
+      fontFamily: "Roboto Regular",
+      fontSize: 16,
       marginVertical: 10,
    },
-   indicatorContainer: {
-      padding: 10,
-      marginBottom: 10,
-      flexDirection: "row",
+   profileText: {
+      marginLeft: 20,
    },
-   progressIndicator: {
-      marginHorizontal: 10,
+   recentAnnouncement: {
+      width: "100%",
+      elevation: 5,
+      height: 50,
+      backgroundColor: white,
+      borderRadius: 12,
+      alignItems: "center",
+      justifyContent: "center",
    },
    quickButtons: {
       width: "100%",

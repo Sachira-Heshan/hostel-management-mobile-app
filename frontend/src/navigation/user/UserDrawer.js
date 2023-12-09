@@ -12,6 +12,9 @@ import Settings from "../../screens/app/user/Settings";
 import Notifications from "../../screens/app/user/Notifications";
 import PaymentReceipts from "../../screens/app/user/PaymentReceipts";
 import HostelRules from "../../screens/app/user/HostelRules";
+import HostelAdministration from "../../screens/app/user/HostelAdmininstration";
+
+import RoomAcceptance from "../../screens/app/user/rooms/RoomAcceptance";
 
 import ViewComplain from "../../screens/app/admin/complains/ViewComplain";
 import ViewLatePass from "../../screens/app/admin/late_passes/ViewLatePass";
@@ -33,6 +36,7 @@ const RoomsStack = createStackNavigator();
 const AnnouncementStack = createStackNavigator();
 const ComplainsStack = createStackNavigator();
 const LatePassesStack = createStackNavigator();
+const HostelAdmininstrationStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
 const NotificationsStack = createStackNavigator();
 
@@ -50,28 +54,33 @@ export const UserDashboard = () => {
             component={UserRooms}
          />
          <DashboardStack.Screen
-            name="UserAnnouncementsDashboard"
-            component={UserAnnouncements}
-         />
-         <DashboardStack.Screen
-            name="UserComplainsDashboard"
-            component={UserComplains}
-         />
-         <DashboardStack.Screen
-            name="UserLatePassesDashboard"
-            component={UserLatePasses}
+            name="UserRoomsAcceptanceDashboard"
+            component={RoomAcceptance}
          />
          <DashboardStack.Screen
             name="UserPaymentReceiptsDashboard"
             component={PaymentReceipts}
          />
          <DashboardStack.Screen
-            name="UserViewPaymentReceipt"
-            component={ViewPaymentReceipt}
+            name="UserComplainsDashboard"
+            component={UserComplains}
          />
          <DashboardStack.Screen
             name="UserHostelRulesDashboard"
             component={HostelRules}
+         />
+         <DashboardStack.Screen
+            name="UserLatePassesDashboard"
+            component={UserLatePasses}
+         />
+         <DashboardStack.Screen
+            name="UserAnnouncementsDashboard"
+            component={UserAnnouncements}
+         />
+
+         <DashboardStack.Screen
+            name="UserViewPaymentReceipt"
+            component={ViewPaymentReceipt}
          />
          <DashboardStack.Screen
             name="UserNotifications"
@@ -171,6 +180,26 @@ export const UserLatePasses = () => {
             component={ViewLatePass}
          />
       </LatePassesStack.Navigator>
+   );
+};
+
+export const UserHostelAdmininstration = () => {
+   return (
+      <HostelAdmininstrationStack.Navigator
+         initialRouteName="UserHostelAdmininstration"
+         screenOptions={{
+            headerShown: false,
+         }}
+      >
+         <HostelAdmininstrationStack.Screen
+            name="UserHostelAdmininstration"
+            component={HostelAdministration}
+         />
+         <HostelAdmininstrationStack.Screen
+            name="UserViewLatePass"
+            component={ViewLatePass}
+         />
+      </HostelAdmininstrationStack.Navigator>
    );
 };
 

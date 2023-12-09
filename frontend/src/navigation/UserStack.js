@@ -13,6 +13,7 @@ import {
    UserComplains,
    UserLatePasses,
    UserRooms,
+   UserHostelAdmininstration,
    UserSettings,
 } from "./user/UserDrawer";
 
@@ -31,12 +32,12 @@ const Drawer = createDrawerNavigator();
 
 const UserDrawer = () => {
    const data = require("../data/dummyData.json");
-   const { logout } = useContext(AuthContext);
+   const { logout, userInfo } = useContext(AuthContext);
 
    const navigation = useNavigation();
 
    const handlePressNotifications = () => {
-      navigation.navigate("AdminNotifications");
+      navigation.navigate("UserNotifications");
    };
 
    return (
@@ -68,7 +69,7 @@ const UserDrawer = () => {
                                        fontSize: 14,
                                     }}
                                  >
-                                    {data.users[0].full_name}
+                                    {userInfo.full_name}
                                  </Text>
                                  <Text
                                     style={{
@@ -77,7 +78,7 @@ const UserDrawer = () => {
                                        marginTop: -4,
                                     }}
                                  >
-                                    {data.users[0].email}
+                                    {userInfo.email}
                                  </Text>
                               </View>
                            </View>
@@ -180,6 +181,21 @@ const UserDrawer = () => {
                drawerIcon: ({ color, size }) => {
                   return (
                      <Icon source={"clock-check"} size={size} color={color} />
+                  );
+               },
+            }}
+         />
+         <Drawer.Screen
+            name="Hostel Administration"
+            component={UserHostelAdmininstration}
+            options={{
+               drawerIcon: ({ color, size }) => {
+                  return (
+                     <Icon
+                        source={"shield-account-variant"}
+                        size={size}
+                        color={color}
+                     />
                   );
                },
             }}
