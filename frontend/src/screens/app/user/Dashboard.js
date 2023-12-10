@@ -12,6 +12,7 @@ const Dashboard = ({ navigation }) => {
    const { userInfo } = useContext(AuthContext);
 
    const data = require("../../../data/dummyData.json");
+   const recentAnnouncement = data.announcements[2];
 
    var date = new Date();
    var hours = date.getHours();
@@ -72,7 +73,12 @@ const Dashboard = ({ navigation }) => {
                </View>
                <View style={styles.quickButtons}>
                   <View style={styles.recentAnnouncement}>
-                     <Text>Recent Announcement</Text>
+                     <Text style={{ fontFamily: "fontBold" }}>
+                        {recentAnnouncement.title}
+                     </Text>
+                     <Text style={{ fontFamily: "fontRegular" }}>
+                        {recentAnnouncement.description}
+                     </Text>
                   </View>
                </View>
                <View style={styles.quickButtons}>
@@ -260,7 +266,7 @@ const styles = StyleSheet.create({
    recentAnnouncement: {
       width: "100%",
       elevation: 5,
-      height: 50,
+      padding: 15,
       backgroundColor: white,
       borderRadius: 12,
       alignItems: "center",

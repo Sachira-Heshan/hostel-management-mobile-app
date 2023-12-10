@@ -15,6 +15,7 @@ import HostelRules from "../../screens/app/user/HostelRules";
 import HostelAdministration from "../../screens/app/user/HostelAdmininstration";
 
 import RoomAcceptance from "../../screens/app/user/rooms/RoomAcceptance";
+import ViewRoomAcceptance from "../../screens/app/user/rooms/ViewRoomAcceptance";
 
 import ViewComplain from "../../screens/app/admin/complains/ViewComplain";
 import ViewLatePass from "../../screens/app/admin/late_passes/ViewLatePass";
@@ -30,6 +31,7 @@ import PendingRoomChecklist from "../../screens/app/admin/rooms/PendingRoomCheck
 import RoomAllocation from "../../screens/app/admin/rooms/RoomAllocation";
 import RoomChecklistForm from "../../screens/app/admin/rooms/RoomChecklistForm";
 import ViewPaymentReceipt from "../../screens/app/admin/payment_receipts/ViewPaymentReceipt";
+import RoomChecklistDetails from "../../screens/app/user/rooms/RoomChecklistDetails";
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -100,26 +102,12 @@ export const UserRooms = () => {
       >
          <RoomsStack.Screen name="UserRooms" component={Rooms} />
          <RoomsStack.Screen
-            name="UserPendingRoomRequests"
-            component={PendingRoomRequests}
+            name="UserRoomAcceptanceView"
+            component={ViewRoomAcceptance}
          />
          <RoomsStack.Screen
             name="UserPendingRoomChecklist"
-            component={PendingRoomChecklist}
-         />
-         <RoomsStack.Screen
-            name="UserAcceptedRoomRequests"
-            component={AcceptedRoomRequests}
-         />
-         <RoomsStack.Screen name="UserRoomDetails" component={RoomDetails} />
-         <RoomsStack.Screen name="UserVacateRoom" component={VacateRoom} />
-         <RoomsStack.Screen
-            name="UserRoomAllocation"
-            component={RoomAllocation}
-         />
-         <RoomsStack.Screen
-            name="UserRoomChecklistForm"
-            component={RoomChecklistForm}
+            component={RoomChecklistDetails}
          />
       </RoomsStack.Navigator>
    );
