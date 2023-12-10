@@ -29,7 +29,71 @@ const HostelRules = ({ navigation }) => {
       <View style={{ flex: 1, backgroundColor: white, minHeight: "100%" }}>
          <View style={styles.container}>
             <View style={styles.contentContainer}>
-               <Text>UserHostelRules</Text>
+               <Text
+                  style={{
+                     fontFamily: "fontBold",
+                     fontSize: 20,
+                     width: "100%",
+                     textAlign: "center",
+                     marginTop: 5,
+                  }}
+               >
+                  Hostel Rules
+               </Text>
+               <Text>
+                  Welcome to Hostel Hive! To ensure a safe and enjoyable living
+                  environment for all residents, please adhere to the following
+                  rules and regulations
+               </Text>
+               <Text>1. General Conduct Respect Others: </Text>
+               <Text>
+                  Treat fellow residents, staff, and guests with courtesy and
+                  respect. Any form of harassment or discrimination will not be
+                  tolerated. Quiet Hours: Maintain a quiet atmosphere during
+                  designated quiet hours to ensure a conducive environment for
+                  studying and rest. Guest Policy: Visitors are allowed only
+                  during specified hours. All guests must register at the front
+                  desk and adhere to hostel rules.
+               </Text>
+               <Text>2. Room Regulations Cleanliness: </Text>
+               <Text>
+                  Keep your room tidy and organized. Regular room inspections
+                  will be conducted to ensure compliance. Prohibited Items: Do
+                  not bring prohibited items such as alcohol, illegal
+                  substances, or any items that may pose a safety risk.
+                  Decorations: Personalize your space with decorations, but
+                  ensure they comply with safety regulations and do not damage
+                  the property.
+               </Text>
+               <Text>3. Safety and Security Emergency Procedures: </Text>
+               <Text>
+                  Familiarize yourself with emergency evacuation procedures and
+                  the location of emergency exits. In case of an emergency,
+                  follow instructions from hostel staff. Lock and Key: Keep your
+                  room locked at all times when not inside. Report lost keys or
+                  suspicious activity immediately to the front desk. Restricted
+                  Areas: Access to certain areas may be restricted. Do not
+                  attempt to enter unauthorized areas for safety reasons.
+               </Text>
+               <Text>4. Community Spaces Kitchen Etiquette: </Text>
+               <Text>
+                  Clean up after using the kitchen facilities. Label and store
+                  your food appropriately, and be mindful of others sharing the
+                  communal space. Laundry Facilities: Use the laundry facilities
+                  during designated hours. Remove your clothes promptly to allow
+                  others access to the machines. Recreational Spaces: Respect
+                  the schedule for common area use. Be considerate of others who
+                  may want to use these spaces.{" "}
+               </Text>
+               <Text>5. Penalties for Violations: </Text>
+               <Text>
+                  Violations of hostel rules may result in warnings, fines, or
+                  expulsion from the hostel. Repeat offenses will be dealt with
+                  more severely. It is your responsibility to be aware of and
+                  adhere to these rules. Thank you for your cooperation! Enjoy
+                  and stay safe.
+               </Text>
+               <Text></Text>
             </View>
          </View>
       </View>

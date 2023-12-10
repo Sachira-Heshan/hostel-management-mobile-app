@@ -1,9 +1,11 @@
+import { useState } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
    black,
    lightGray,
    primaryBlue,
+   textDarkGray,
    textLightGray,
    white,
 } from "../../../../constants/Colors";
@@ -13,21 +15,20 @@ import * as Yup from "yup";
 import { DatePickerInput } from "react-native-paper-dates";
 
 const RequestLatePass = ({ navigation }) => {
+   const [inputDepartureDate, setInputDepartureDate] = useState(undefined);
+   const [inputArrivalDate, setInputArrivalDate] = useState(undefined);
+
    const requestNewLatePassSchema = Yup.object({
       reason: Yup.string().required(),
-      departure_date: Yup.string().required("Departure date is required!"),
+      departure_date: Yup.date().required("Departure date is required!"),
       departure_time: Yup.string().required("Departure time is required!"),
       arrival_date: Yup.string().required("Arrival date is required!"),
       arrival_time: Yup.string().required("Arrival time is required!"),
    });
 
-   const handleAddNewComplain = (values) => {
-      //handle add complain
+   const handleRequestLatePass = (values) => {
+      //handle request late pass
       console.log(values);
-   };
-
-   const handleUploadImage = () => {
-      //handle upload image
    };
 
    return (
@@ -40,10 +41,10 @@ const RequestLatePass = ({ navigation }) => {
             <View style={styles.contentContainer}>
                <Text style={styles.titleText}>Request a Late Pass</Text>
                <Formik
-                  onSubmit={(values) => handleAddNewComplain(values)}
+                  onSubmit={(values) => handleRequestLatePass(values)}
                   initialValues={{
                      reason: "",
-                     departure_date: "",
+                     departure_date: new Date(),
                      departure_time: "",
                      arrival_date: "",
                      arrival_time: "",
@@ -84,8 +85,8 @@ const RequestLatePass = ({ navigation }) => {
                               <DatePickerInput
                                  locale="en"
                                  label="Departure Date"
-                                 value={values.departure_date}
-                                 onChange={handleChange("departure_date")}
+                                 value={inputDepartureDate}
+                                 onChange={(d) => setInputDepartureDate(d)}
                                  inputMode="start"
                                  style={{ width: "100%" }}
                                  mode="outlined"
@@ -96,6 +97,26 @@ const RequestLatePass = ({ navigation }) => {
                                  outlineStyle={{ borderRadius: 4 }}
                               />
                            </View>
+                           <TextInput
+                              mode="outlined"
+                              label={"Departure Time"}
+                              onChangeText={handleChange("departure_time")}
+                              onBlur={handleBlur("departure_time")}
+                              value={values.departure_time}
+                              selectionColor={lightGray}
+                              cursorColor={primaryBlue}
+                              outlineColor={lightGray}
+                              activeOutlineColor={primaryBlue}
+                              outlineStyle={{ borderRadius: 4 }}
+                              right={
+                                 <TextInput.Icon
+                                    icon={"clock-outline"}
+                                    iconColor={textDarkGray}
+                                    size={20}
+                                 />
+                              }
+                              style={{ marginTop: 10 }}
+                           />
 
                            <Text style={styles.infoTextDesc}>Arrival</Text>
                            <View
@@ -105,6 +126,49 @@ const RequestLatePass = ({ navigation }) => {
                                  backgroundColor: textLightGray,
                               }}
                            ></View>
+                           <View
+                              style={{
+                                 justifyContent: "center",
+                                 flex: 1,
+                                 alignItems: "center",
+                                 marginTop: 8,
+                              }}
+                           >
+                              <DatePickerInput
+                                 locale="en"
+                                 label="Departure Date"
+                                 value={inputArrivalDate}
+                                 onChange={(d) => setInputArrivalDate(d)}
+                                 inputMode="start"
+                                 style={{ width: "100%" }}
+                                 mode="outlined"
+                                 selectionColor={lightGray}
+                                 cursorColor={primaryBlue}
+                                 outlineColor={lightGray}
+                                 activeOutlineColor={primaryBlue}
+                                 outlineStyle={{ borderRadius: 4 }}
+                              />
+                           </View>
+                           <TextInput
+                              mode="outlined"
+                              label={"Arrival Time"}
+                              onChangeText={handleChange("arrival_time")}
+                              onBlur={handleBlur("arrival_time")}
+                              value={values.arrival_time}
+                              selectionColor={lightGray}
+                              cursorColor={primaryBlue}
+                              outlineColor={lightGray}
+                              activeOutlineColor={primaryBlue}
+                              outlineStyle={{ borderRadius: 4 }}
+                              right={
+                                 <TextInput.Icon
+                                    icon={"clock-outline"}
+                                    iconColor={textDarkGray}
+                                    size={20}
+                                 />
+                              }
+                              style={{ marginTop: 10 }}
+                           />
 
                            <Button
                               mode="contained"

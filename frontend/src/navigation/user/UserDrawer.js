@@ -25,10 +25,10 @@ import AddNewComplain from "../../screens/app/user/complains/AddNewComplain";
 import ViewComplain from "../../screens/app/user/complains/ViewComplain";
 import RequestLatePass from "../../screens/app/user/late_passes/RequestLatePass";
 import ViewLatePass from "../../screens/app/user/late_passes/ViewLatePass";
+import ViewAnnouncement from "../../screens/app/user/announcements/ViewAnnouncement";
 
 import RoomDetails from "../../screens/app/admin/rooms/RoomDetails";
 import AddAnnouncement from "../../screens/app/admin/announcements/AddAnnouncement";
-import ViewAnnouncement from "../../screens/app/admin/announcements/ViewAnnouncement";
 import RoomChecklistForm from "../../screens/app/admin/rooms/RoomChecklistForm";
 
 const DashboardStack = createStackNavigator();
@@ -89,7 +89,6 @@ export const UserDashboard = () => {
             name="UserLatePassesDashboard"
             component={UserLatePasses}
          />
-
          <DashboardStack.Screen
             name="UserRequestLatePass"
             component={RequestLatePass}
@@ -98,10 +97,13 @@ export const UserDashboard = () => {
             name="UserViewLatePass"
             component={ViewLatePass}
          />
-
          <DashboardStack.Screen
             name="UserAnnouncementsDashboard"
             component={UserAnnouncements}
+         />
+         <DashboardStack.Screen
+            name="UserViewAnnouncement"
+            component={ViewAnnouncement}
          />
 
          <DashboardStack.Screen
