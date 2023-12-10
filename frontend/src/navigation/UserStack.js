@@ -1,5 +1,12 @@
 import { useContext } from "react";
-import { View, Text, StyleSheet, ImageBackground, Image } from "react-native";
+import {
+   View,
+   Text,
+   StyleSheet,
+   ImageBackground,
+   Image,
+   SafeAreaView,
+} from "react-native";
 
 import {
    createDrawerNavigator,

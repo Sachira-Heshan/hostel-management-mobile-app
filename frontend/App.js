@@ -5,6 +5,7 @@ import { useFonts } from "expo-font";
 import "react-native-gesture-handler";
 import { LightScheme } from "./src/theme/lightScheme";
 import { DarkScheme } from "./src/theme/darkScheme";
+import { StatusBar } from "expo-status-bar";
 
 import {
    fontBold,
@@ -14,6 +15,7 @@ import {
    fontThin,
 } from "./src/constants/Fonts";
 import { AuthProvider } from "./src/context/AuthContext";
+import { white } from "./src/constants/Colors";
 
 const App = () => {
    const colorScheme = useColorScheme();
@@ -50,6 +52,7 @@ const App = () => {
       <PaperProvider settings={{ rippleEffectEnabled: false }}>
          <AuthProvider>
             <AppNav />
+            <StatusBar backgroundColor={white} />
          </AuthProvider>
       </PaperProvider>
    );
