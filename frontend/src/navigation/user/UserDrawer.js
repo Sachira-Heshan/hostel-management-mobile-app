@@ -16,22 +16,20 @@ import HostelAdministration from "../../screens/app/user/HostelAdmininstration";
 
 import RoomAcceptance from "../../screens/app/user/rooms/RoomAcceptance";
 import ViewRoomAcceptance from "../../screens/app/user/rooms/ViewRoomAcceptance";
+import RoomChecklistDetails from "../../screens/app/user/rooms/RoomChecklistDetails";
+import ChangePassword from "../../screens/app/user/settings/ChangePassword";
+import ChangeProfileDetails from "../../screens/app/user/settings/ChangeProfileDetails";
+import ViewPaymentReceipt from "../../screens/app/user/payment_receipts/ViewPaymentReceipt";
+import AddPaymentReceipt from "../../screens/app/user/payment_receipts/AddPaymentReceipt";
+import AddNewComplain from "../../screens/app/user/complains/AddNewComplain";
+import ViewComplain from "../../screens/app/user/complains/ViewComplain";
+import RequestLatePass from "../../screens/app/user/late_passes/RequestLatePass";
+import ViewLatePass from "../../screens/app/user/late_passes/ViewLatePass";
 
-import ViewComplain from "../../screens/app/admin/complains/ViewComplain";
-import ViewLatePass from "../../screens/app/admin/late_passes/ViewLatePass";
-import PendingRoomRequests from "../../screens/app/admin/rooms/PendingRoomRequests";
-import AcceptedRoomRequests from "../../screens/app/admin/rooms/AcceptedRequests";
 import RoomDetails from "../../screens/app/admin/rooms/RoomDetails";
-import VacateRoom from "../../screens/app/admin/rooms/VacateRoom";
-import ChangeProfileDetails from "../../screens/app/admin/settings/ChangeProfileDetails";
-import ChangePassword from "../../screens/app/admin/settings/ChangePassword";
 import AddAnnouncement from "../../screens/app/admin/announcements/AddAnnouncement";
 import ViewAnnouncement from "../../screens/app/admin/announcements/ViewAnnouncement";
-import PendingRoomChecklist from "../../screens/app/admin/rooms/PendingRoomChecklist";
-import RoomAllocation from "../../screens/app/admin/rooms/RoomAllocation";
 import RoomChecklistForm from "../../screens/app/admin/rooms/RoomChecklistForm";
-import ViewPaymentReceipt from "../../screens/app/admin/payment_receipts/ViewPaymentReceipt";
-import RoomChecklistDetails from "../../screens/app/user/rooms/RoomChecklistDetails";
 
 const DashboardStack = createStackNavigator();
 const RoomsStack = createStackNavigator();
@@ -64,8 +62,24 @@ export const UserDashboard = () => {
             component={PaymentReceipts}
          />
          <DashboardStack.Screen
+            name="UserAddPaymentReceipts"
+            component={AddPaymentReceipt}
+         />
+         <DashboardStack.Screen
+            name="UserViewPaymentReceipts"
+            component={ViewPaymentReceipt}
+         />
+         <DashboardStack.Screen
             name="UserComplainsDashboard"
             component={UserComplains}
+         />
+         <DashboardStack.Screen
+            name="UserAddNewComplain"
+            component={AddNewComplain}
+         />
+         <DashboardStack.Screen
+            name="UserViewComplain"
+            component={ViewComplain}
          />
          <DashboardStack.Screen
             name="UserHostelRulesDashboard"
@@ -75,6 +89,16 @@ export const UserDashboard = () => {
             name="UserLatePassesDashboard"
             component={UserLatePasses}
          />
+
+         <DashboardStack.Screen
+            name="UserRequestLatePass"
+            component={RequestLatePass}
+         />
+         <DashboardStack.Screen
+            name="UserViewLatePass"
+            component={ViewLatePass}
+         />
+
          <DashboardStack.Screen
             name="UserAnnouncementsDashboard"
             component={UserAnnouncements}

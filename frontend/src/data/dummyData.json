@@ -5,21 +5,24 @@
          "user": "65756295b1a9ebd16713b475",
          "title": "Tap is broken",
          "description": "Block B second floor bathroom tap is broken",
-         "image": ""
+         "image": "",
+         "status": "pending"
       },
       {
-         "id": "1",
+         "id": "2",
          "user": "65720c08e4421f606f62c59a",
          "title": "Fan is broken",
          "description": "Block B second floor room 5 fan is broken",
-         "image": ""
+         "image": "",
+         "status": "pending"
       },
       {
-         "id": "1",
+         "id": "3",
          "user": "6574152a239fdd35f04c5d6b",
          "title": "Bulb is missing",
          "description": "Block A third floor room 8 one bulb is missing",
-         "image": ""
+         "image": "",
+         "status": "accepted"
       }
    ],
    "announcements": [
@@ -83,6 +86,7 @@
    ],
    "late_passes": [
       {
+         "id": "1",
          "name": "Sachira Heshan",
          "user": "65720c08e4421f606f62c59a",
          "registration_number": "2019/E/055",
@@ -90,9 +94,11 @@
          "departure_date": "15 Nov 2023",
          "departure_time": "6.00 PM",
          "arrival_date": "18 Nov 2023",
-         "arrival_time": "6.00 AM"
+         "arrival_time": "6.00 AM",
+         "status": "pending"
       },
       {
+         "id": "2",
          "name": "Anuka Mithara",
          "user": "65756295b1a9ebd16713b475",
          "registration_number": "2019/E/054",
@@ -100,7 +106,20 @@
          "departure_date": "15 Nov 2023",
          "departure_time": "6.00 PM",
          "arrival_date": "18 Nov 2023",
-         "arrival_time": "6.00 AM"
+         "arrival_time": "6.00 AM",
+         "status": "pending"
+      },
+      {
+         "id": "3",
+         "name": "Chamod Lakshan",
+         "user": "6574152a239fdd35f04c5d6b",
+         "registration_number": "2019/E/059",
+         "reason": "Going to a competition",
+         "departure_date": "16 Nov 2023",
+         "departure_time": "6.00 PM",
+         "arrival_date": "18 Nov 2023",
+         "arrival_time": "5.00 AM",
+         "status": "accepted"
       }
    ],
    "pending_room_requests": [
@@ -316,7 +335,8 @@
          "registration_number": "2019/E/054",
          "amount": "Rs. 3000",
          "reason": "Year payment",
-         "receipt": ""
+         "receipt": "",
+         "status": "pending"
       },
       {
          "id": "2",
@@ -324,17 +344,29 @@
          "name": "Chamod Lakshan",
          "registration_number": "2019/E/059",
          "amount": "Rs. 3000",
-         "reason": "Year payment",
-         "receipt": ""
+         "reason": "Year payment 2023",
+         "receipt": "",
+         "status": "pending"
       },
       {
          "id": "3",
+         "user": "6574152a239fdd35f04c5d6b",
+         "name": "Chamod Lakshan",
+         "registration_number": "2019/E/059",
+         "amount": "Rs. 2000",
+         "reason": "Year payment 2020",
+         "receipt": "",
+         "status": "accepted"
+      },
+      {
+         "id": "4",
          "user": "65756262b1a9ebd16713b472",
          "name": "Yasiru Kawsala",
          "registration_number": "2019/E/060",
          "amount": "Rs. 3000",
          "reason": "Year payment",
-         "receipt": ""
+         "receipt": "",
+         "status": "pending"
       }
    ]
 }

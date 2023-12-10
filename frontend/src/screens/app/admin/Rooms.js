@@ -1,8 +1,10 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useContext } from "react";
 import { View, Text, Image, StyleSheet, RefreshControl } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { textLightGray, white } from "../../../constants/Colors";
 import { TouchableRipple, Avatar } from "react-native-paper";
+
+import { AuthContext } from "../../../context/AuthContext";
 
 const Rooms = ({ navigation }) => {
    var date = new Date();
@@ -20,6 +22,8 @@ const Rooms = ({ navigation }) => {
 
    //Get dummy data from the json file
    const data = require("../../../data/dummyData.json");
+
+   const { userInfo } = useContext(AuthContext);
 
    const [refreshing, setRefreshing] = useState(false);
 
@@ -63,7 +67,7 @@ const Rooms = ({ navigation }) => {
                            marginTop: -5,
                         }}
                      >
-                        {data.users[1].full_name}
+                        {userInfo.full_name}
                      </Text>
                   </View>
                </View>
