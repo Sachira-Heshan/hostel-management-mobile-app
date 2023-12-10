@@ -12,9 +12,15 @@ import {
 } from "../../../../constants/Colors";
 import { Button, List, TouchableRipple, Avatar } from "react-native-paper";
 import { useCallback, useState } from "react";
+import SuccessModal from "../../../../components/SuccessModal";
 
 const RoomAcceptance = ({ navigation }) => {
    const [refreshing, setRefreshing] = useState(false);
+   const [visible, setVisible] = useState(false);
+
+   const hideModal = () => {
+      setVisible(false);
+   };
 
    const data = require("../../../../data/dummyData.json");
 
@@ -30,7 +36,15 @@ const RoomAcceptance = ({ navigation }) => {
          <View style={styles.container}>
             <View style={styles.contentContainer}>
                <Text>UserRoomAcceptance</Text>
+               <Button mode="contained" onPress={() => setVisible(true)}>
+                  Test the modal
+               </Button>
             </View>
+            <SuccessModal
+               message={"Testing from room acceptance"}
+               visible={visible}
+               hideModal={() => hideModal}
+            ></SuccessModal>
          </View>
       </View>
    );
