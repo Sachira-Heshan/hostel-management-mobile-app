@@ -39,6 +39,9 @@ const userRegister = asyncHandler(async (req, res) => {
          u_id: user._id,
          full_name: user.full_name,
          email: user.email,
+         mobile_no: user.mobile_no,
+         registration_no: user.registration_no ? user.registration_no : "-",
+         bio: user.bio ? user.bio : "-",
       });
    } else {
       res.status(400);

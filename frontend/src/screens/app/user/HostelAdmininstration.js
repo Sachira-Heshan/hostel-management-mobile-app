@@ -1,4 +1,4 @@
-import { View, Text, RefreshControl, FlatList, StyleSheet } from "react-native";
+import { View, Text, RefreshControl, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
@@ -12,6 +12,7 @@ import {
 } from "../../../constants/Colors";
 import { Button, List, TouchableRipple, Avatar } from "react-native-paper";
 import { useCallback, useState } from "react";
+import HostelAdministrationCard from "../../../components/HostelAdministrationCard";
 
 const HostelAdministration = ({ navigation }) => {
    const [refreshing, setRefreshing] = useState(false);
@@ -26,13 +27,48 @@ const HostelAdministration = ({ navigation }) => {
    }, []);
 
    return (
-      <View style={{ flex: 1, backgroundColor: white, minHeight: "100%" }}>
-         <View style={styles.container}>
-            <View style={styles.contentContainer}>
-               <Text>UserHostelAdministration</Text>
+      <ScrollView>
+         <View style={{ flex: 1, backgroundColor: white, minHeight: "100%" }}>
+            <View style={styles.container}>
+               <View style={styles.contentContainer}>
+                  <HostelAdministrationCard
+                     name="Mr. Kabilan"
+                     position="Warden"
+                     phone_no={"0712345678"}
+                     email={"kabilan@email.com"}
+                  />
+                  <View style={styles.adminCards}>
+                     <HostelAdministrationCard
+                        name="Mr. Anand"
+                        position="Sub Warden"
+                        phone_no={"0712343678"}
+                        email={"anand@email.com"}
+                     />
+                     <HostelAdministrationCard
+                        name="Mr. Janaka"
+                        position="Part-time Sub Warden"
+                        phone_no={"0712123678"}
+                        email={"janaka@email.com"}
+                     />
+                  </View>
+                  <View style={styles.adminCards}>
+                     <HostelAdministrationCard
+                        name="Mr. Anand"
+                        position="Sub Warden"
+                        phone_no={"0712343678"}
+                        email={"anand@email.com"}
+                     />
+                     <HostelAdministrationCard
+                        name="Mr. Janaka"
+                        position="Part-time Sub Warden"
+                        phone_no={"0712123678"}
+                        email={"janaka@email.com"}
+                     />
+                  </View>
+               </View>
             </View>
          </View>
-      </View>
+      </ScrollView>
    );
 };
 
@@ -69,6 +105,10 @@ const styles = StyleSheet.create({
       height: 50,
       borderRadius: 50,
       alignSelf: "center",
+   },
+   adminCards: {
+      flexDirection: "row",
+      gap: 10,
    },
 });
 

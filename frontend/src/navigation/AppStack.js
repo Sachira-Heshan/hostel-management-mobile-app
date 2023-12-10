@@ -29,7 +29,7 @@ const Drawer = createDrawerNavigator();
 
 const AdminDrawer = () => {
    const data = require("../data/dummyData.json");
-   const { logout } = useContext(AuthContext);
+   const { logout, userInfo } = useContext(AuthContext);
 
    const navigation = useNavigation();
 
@@ -66,7 +66,7 @@ const AdminDrawer = () => {
                                        fontSize: 14,
                                     }}
                                  >
-                                    {data.users[0].full_name}
+                                    {userInfo.full_name}
                                  </Text>
                                  <Text
                                     style={{
@@ -75,7 +75,7 @@ const AdminDrawer = () => {
                                        marginTop: -4,
                                     }}
                                  >
-                                    {data.users[0].email}
+                                    {userInfo.email}
                                  </Text>
                               </View>
                            </View>
