@@ -4,9 +4,12 @@ import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
    black,
+   darkGreen,
+   darkYellow,
    lightGray,
    orangeDark,
    primaryBlue,
+   redIndicator,
    textDarkGray,
    white,
    yellowDark,
@@ -41,51 +44,51 @@ const Dashboard = ({ navigation }) => {
                   <View style={styles.indicatorContainer}>
                      <View style={{}}>
                         <CircularProgress
-                           value={21}
+                           value={17}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={darkGreen}
                            maxValue={64}
                            title="Block A"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={darkGreen}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={darkGreen}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
                      </View>
                      <View style={styles.progressIndicator}>
                         <CircularProgress
-                           value={253}
+                           value={323}
                            radius={50}
                            duration={1500}
-                           progressValueColor={orangeDark}
+                           progressValueColor={redIndicator}
                            maxValue={400}
                            title="Block B"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={orangeDark}
+                           inActiveStrokeColor={redIndicator}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={orangeDark}
+                           activeStrokeColor={redIndicator}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
                      </View>
                      <View style={{}}>
                         <CircularProgress
-                           value={178}
+                           value={219}
                            radius={50}
                            duration={1500}
-                           progressValueColor={yellowMark}
+                           progressValueColor={darkYellow}
                            maxValue={400}
                            title="Block C"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={yellowMark}
+                           inActiveStrokeColor={darkYellow}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={yellowMark}
+                           activeStrokeColor={darkYellow}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
@@ -97,34 +100,34 @@ const Dashboard = ({ navigation }) => {
                   <View style={styles.indicatorContainer}>
                      <View style={{}}>
                         <CircularProgress
-                           value={12}
+                           value={9}
                            radius={50}
                            duration={1500}
-                           progressValueColor={primaryBlue}
+                           progressValueColor={darkGreen}
                            maxValue={32}
                            title="Block A"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={primaryBlue}
+                           inActiveStrokeColor={darkGreen}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={primaryBlue}
+                           activeStrokeColor={darkGreen}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
                      </View>
                      <View style={styles.progressIndicator}>
                         <CircularProgress
-                           value={65}
+                           value={80}
                            radius={50}
                            duration={1500}
-                           progressValueColor={orangeDark}
+                           progressValueColor={redIndicator}
                            maxValue={100}
                            title="Block B"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={orangeDark}
+                           inActiveStrokeColor={redIndicator}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={orangeDark}
+                           activeStrokeColor={redIndicator}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />
@@ -134,14 +137,14 @@ const Dashboard = ({ navigation }) => {
                            value={48}
                            radius={50}
                            duration={1500}
-                           progressValueColor={yellowMark}
+                           progressValueColor={darkYellow}
                            maxValue={100}
                            title="Block C"
                            titleColor={black}
                            titleStyle={{ fontFamily: "fontBold" }}
-                           inActiveStrokeColor={yellowMark}
+                           inActiveStrokeColor={darkYellow}
                            inActiveStrokeOpacity={0.2}
-                           activeStrokeColor={yellowMark}
+                           activeStrokeColor={darkYellow}
                            inActiveStrokeWidth={8}
                            activeStrokeWidth={8}
                         />

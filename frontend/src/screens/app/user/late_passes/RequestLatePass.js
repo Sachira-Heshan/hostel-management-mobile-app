@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import {
@@ -12,11 +12,47 @@ import {
 import { Button, TextInput, TouchableRipple } from "react-native-paper";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { DatePickerInput } from "react-native-paper-dates";
+import { DatePickerInput, TimePickerModal } from "react-native-paper-dates";
 
 const RequestLatePass = ({ navigation }) => {
    const [inputDepartureDate, setInputDepartureDate] = useState(undefined);
+   const [inputDepartureTime, setInputDepartureTime] = useState({
+      hours: "",
+      minutes: "",
+   });
    const [inputArrivalDate, setInputArrivalDate] = useState(undefined);
+   const [inputArrivalTime, setInputArrivalTime] = useState({
+      hours: "",
+      minutes: "",
+   });
+
+   const [visible, setVisible] = useState(false);
+   const onDismiss = useCallback(() => {
+      setVisible(false);
+   }, [setVisible]);
+
+   const onConfirm = useCallback(
+      ({ hours, minutes }) => {
+         setVisible(false);
+         setInputDepartureTime({ hours, minutes });
+         console.log({ hours, minutes });
+      },
+      [setVisible]
+   );
+
+   const [visibleArrivalTime, setVisibleArrivalTime] = useState(false);
+   const onDismissArrivalTime = useCallback(() => {
+      setVisible(false);
+   }, [setVisible]);
+
+   const onConfirmArrivalTime = useCallback(
+      ({ hours, minutes }) => {
+         setVisible(false);
+         setInputArrivalTime({ hours, minutes });
+         console.log({ hours, minutes });
+      },
+      [setVisibleArrivalTime]
+   );
 
    const requestNewLatePassSchema = Yup.object({
       reason: Yup.string().required(),
@@ -102,7 +138,7 @@ const RequestLatePass = ({ navigation }) => {
                               label={"Departure Time"}
                               onChangeText={handleChange("departure_time")}
                               onBlur={handleBlur("departure_time")}
-                              value={values.departure_time}
+                              value={`${inputDepartureTime.hours}:${inputDepartureTime.minutes}`}
                               selectionColor={lightGray}
                               cursorColor={primaryBlue}
                               outlineColor={lightGray}
@@ -113,9 +149,17 @@ const RequestLatePass = ({ navigation }) => {
                                     icon={"clock-outline"}
                                     iconColor={textDarkGray}
                                     size={20}
+                                    onPress={() => setVisible(true)}
                                  />
                               }
                               style={{ marginTop: 10 }}
+                           />
+                           <TimePickerModal
+                              visible={visible}
+                              onDismiss={onDismiss}
+                              onConfirm={onConfirm}
+                              hours={12}
+                              minutes={14}
                            />
 
                            <Text style={styles.infoTextDesc}>Arrival</Text>
@@ -136,7 +180,7 @@ const RequestLatePass = ({ navigation }) => {
                            >
                               <DatePickerInput
                                  locale="en"
-                                 label="Departure Date"
+                                 label="Arrival Date"
                                  value={inputArrivalDate}
                                  onChange={(d) => setInputArrivalDate(d)}
                                  inputMode="start"
@@ -154,7 +198,7 @@ const RequestLatePass = ({ navigation }) => {
                               label={"Arrival Time"}
                               onChangeText={handleChange("arrival_time")}
                               onBlur={handleBlur("arrival_time")}
-                              value={values.arrival_time}
+                              value={`${inputDepartureTime.hours}:${inputDepartureTime.minutes}`}
                               selectionColor={lightGray}
                               cursorColor={primaryBlue}
                               outlineColor={lightGray}
@@ -168,6 +212,13 @@ const RequestLatePass = ({ navigation }) => {
                                  />
                               }
                               style={{ marginTop: 10 }}
+                           />
+                           <TimePickerModal
+                              visible={visibleArrivalTime}
+                              onDismiss={onDismissArrivalTime}
+                              onConfirm={onConfirmArrivalTime}
+                              hours={12}
+                              minutes={14}
                            />
 
                            <Button

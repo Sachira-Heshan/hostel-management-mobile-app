@@ -4,12 +4,14 @@ import { ScrollView } from "react-native-gesture-handler";
 import { SafeAreaView } from "react-native-safe-area-context";
 import {
    black,
+   darkGreen,
    darkRed,
    lightGray,
    primaryBlue,
    textDarkGray,
    textLightGray,
    white,
+   yellowDark,
 } from "../../../constants/Colors";
 import {
    Button,
@@ -81,7 +83,11 @@ const PaymentReceipts = ({ navigation }) => {
                            description={item.amount}
                            left={(color = textDarkGray) => (
                               <List.Icon
-                                 color={primaryBlue}
+                                 color={
+                                    item.status === "pending"
+                                       ? yellowDark
+                                       : darkGreen
+                                 }
                                  icon={
                                     item.status === "pending"
                                        ? "clock"
