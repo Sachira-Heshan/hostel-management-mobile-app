@@ -112,10 +112,6 @@ const ChangeProfileDetails = ({ navigation }) => {
                         {userInfo.mobile_no}
                      </Text>
                   </View>
-                  <View style={styles.detailContainer}>
-                     <Text style={styles.detailTitle}>Bio</Text>
-                     <Text style={styles.detailValue}>{userInfo.bio}</Text>
-                  </View>
                </View>
             </View>
          </View>

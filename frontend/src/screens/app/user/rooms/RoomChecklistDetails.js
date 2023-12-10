@@ -42,7 +42,7 @@ const RoomChecklistDetails = ({ navigation, route }) => {
 
    const [showDeclineRequest, setShowDeclineRequest] = useState(false);
 
-   const handleRoomChecklistFormSubmission = (values) => {
+   const handleRoomChecklistFormSubmission = (values, errors) => {
       //handle checklist form submission
       console.log(values);
    };
@@ -243,8 +243,8 @@ const RoomChecklistDetails = ({ navigation, route }) => {
                         comments: "",
                      }}
                      validationSchema={roomChecklistFormSchema}
-                     onSubmit={(values) =>
-                        handleRoomChecklistFormSubmission(values)
+                     onSubmit={(values, errors) =>
+                        handleRoomChecklistFormSubmission(values, errors)
                      }
                   >
                      {({

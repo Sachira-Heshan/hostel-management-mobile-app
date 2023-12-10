@@ -11,6 +11,7 @@ import {
    textDarkGray,
    textLightGray,
    white,
+   yellowDark,
 } from "../../../../constants/Colors";
 import {
    Button,
@@ -71,7 +72,11 @@ const RoomAcceptance = ({ navigation }) => {
                            description={item.reason}
                            left={(color = primaryBlue, size = 40) => (
                               <List.Icon
-                                 color={primaryBlue}
+                                 color={
+                                    item.status === "pending_acceptance"
+                                       ? yellowDark
+                                       : darkGreen
+                                 }
                                  icon={
                                     item.status === "pending_acceptance"
                                        ? "clock"

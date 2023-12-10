@@ -50,9 +50,9 @@ const ItemConditionDetails = ({
                   right: <TextInput.Icon icon={"chevron-down"} />,
                }}
             />
-            {errorCondition && touchedCondition ? (
+            {/* {errorCondition && touchedCondition ? (
                <Text style={styles.errorText}>{errorCondition}</Text>
-            ) : null}
+            ) : null} */}
          </View>
          <TextInput
             mode="outlined"
@@ -68,9 +68,9 @@ const ItemConditionDetails = ({
             outlineStyle={{ borderRadius: 4 }}
             style={{ flex: 1.5 }}
          />
-         {errorQuantity && touchedQuantity ? (
+         {/* {errorQuantity && touchedQuantity ? (
             <Text style={styles.errorText}>{errorQuantity}</Text>
-         ) : null}
+         ) : null} */}
       </View>
    );
 };
