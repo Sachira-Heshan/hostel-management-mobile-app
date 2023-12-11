@@ -101,4 +101,3 @@ To get started with the Hostel Management Mobile App, follow the instructions be
 
 -  [Sachira Heshan](https://github.com/Sachira-Heshan)
 -  [Anuka Mithara](https://github.com/AnukaMithara)
--  ...
